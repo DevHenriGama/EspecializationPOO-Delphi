@@ -1,0 +1,30 @@
+unit Classe.Cabos;
+
+interface
+
+uses
+  Classe.Item;
+
+type
+  TCabos = class(TItem)
+    private
+
+    public
+      procedure AddNewCable;
+  end;
+
+implementation
+
+{ TCabos }
+
+procedure TCabos.AddNewCable;
+begin
+ with Self do begin
+   ID := 1;
+   ItemName := 'VGA Cable';
+   State := 'Good';
+
+ end;
+end;
+
+end.
