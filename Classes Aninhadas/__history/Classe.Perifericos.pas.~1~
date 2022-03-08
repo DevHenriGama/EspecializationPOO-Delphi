@@ -1,0 +1,62 @@
+unit Classe.Perifericos;
+
+interface
+
+  type
+    TPeriferico = class
+
+      Type
+        TMaterial = class
+          Strict private
+            const FCarbon : String = 'Carbon';
+            const FPlastic : String = 'Plastic';
+          public
+          function GetMaterialPlastic : String;
+          function GetMaterialCarbon : String ;
+      end;
+
+       private
+          FModelo: String;
+          FNome: String;
+          procedure SetModelo(const Value: String);
+          procedure SetNome(const Value: String);
+      public
+          property Nome : String read FNome write SetNome;
+          property Modelo : String read FModelo write SetModelo;
+          function Material : TMaterial;
+
+    end;
+
+implementation
+
+{ TPeriferico }
+
+
+function TPeriferico.Material: TMaterial;
+begin
+  Result := TMaterial.Create;
+end;
+
+procedure TPeriferico.SetModelo(const Value: String);
+begin
+  FModelo := Value;
+end;
+
+procedure TPeriferico.SetNome(const Value: String);
+begin
+  FNome := Value;
+end;
+
+{ TPeriferico.TMaterial }
+
+function TPeriferico.TMaterial.GetMaterialCarbon: String;
+begin
+ Result := FCarbon;
+end;
+
+function TPeriferico.TMaterial.GetMaterialPlastic: String;
+begin
+ Result := FPlastic;
+end;
+
+end.

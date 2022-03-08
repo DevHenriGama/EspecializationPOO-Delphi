@@ -1,0 +1,3 @@
+Nome: Mouse
+Modelo:GTECH0800
+Material: Plastic
