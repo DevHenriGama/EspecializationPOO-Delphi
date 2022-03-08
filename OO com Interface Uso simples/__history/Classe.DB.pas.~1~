@@ -1,0 +1,36 @@
+unit Classe.DB;
+
+interface
+  type
+    IBDSettings = interface
+      ['{D252599A-D8B7-458D-83D7-693873B2F3A9}']
+        procedure Exibir;
+    end;
+
+    TSQLServe = class(TInterfacedObject, IBDSettings)
+      procedure Exibir;
+    end;
+
+    TMySQL = class(TInterfacedObject, IBDSettings)
+      procedure Exibir;
+    end;
+implementation
+
+uses
+  Vcl.Dialogs;
+
+{ TMySQL }
+
+procedure TMySQL.Exibir;
+begin
+ ShowMessage('mySQL DB');
+end;
+
+{ TSQLServe }
+
+procedure TSQLServe.Exibir;
+begin
+ShowMessage('SQL SERVER DB');
+end;
+
+end.

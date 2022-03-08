@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2021/12/03 10:12:28.000.765,=C:\Users\darke\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/12/29 12:23:25.000.158,=C:\Users\darke\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/03/08 16:12:54.030,=C:\Users\darke\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/03/08 16:19:33.128,=C:\Users\darke\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2022/03/08 16:26:07.299,C:\Users\darke\Desktop\Projects\Delphi\Estudos\Especialização POO Delphi\OO com Interface Uso simples\Classe.DB.pas=C:\Users\darke\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2022/03/08 16:26:15.992,C:\Users\darke\Desktop\Projects\Delphi\Estudos\Especialização POO Delphi\OO com Interface Uso simples\Classe.Main.pas=C:\Users\darke\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/03/08 16:26:15.992,C:\Users\darke\Desktop\Projects\Delphi\Estudos\Especialização POO Delphi\OO com Interface Uso simples\Classe.Main.dfm=C:\Users\darke\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2022/03/08 16:26:21.407,C:\Users\darke\Desktop\Projects\Delphi\Estudos\Especialização POO Delphi\OO com Interface Uso simples\InterfaceOO.dproj=C:\Users\darke\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
