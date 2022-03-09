@@ -1,0 +1,28 @@
+unit MainForm;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs,  Vcl.StdCtrls;
+
+type
+  TTesteComponentForm = class(TForm)
+    Memo1: TMemo;
+    Test: TButton;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  TesteComponentForm: TTesteComponentForm;
+
+implementation
+
+{$R *.dfm}
+
+
+
+end.

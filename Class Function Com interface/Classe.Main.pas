@@ -25,7 +25,9 @@ implementation
 
 procedure TMain.Button1Click(Sender: TObject);
 begin
- TEletronic.AddEletronic;
+  TEletronic.New.AddEletronic;
+
+// TEletronic.AddEletronic;
 end;
 
 end.

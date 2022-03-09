@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2022/03/09 17:06:39.487,=rtl.dcp</Transaction>
+    <Transaction>2022/03/09 17:06:46.750,=C:\Users\darke\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/03/09 17:19:10.124,C:\Users\darke\Desktop\Projects\Delphi\Estudos\Especialização POO Delphi\EspecializationPOO-Delphi\Criação de Componente Simples\Classe.Main.pas=C:\Users\darke\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/03/09 17:19:23.434,C:\Users\darke\Desktop\Projects\Delphi\Estudos\Especialização POO Delphi\EspecializationPOO-Delphi\Criação de Componente Simples\TFuncUtils.dproj=C:\Users\darke\Documents\Embarcadero\Studio\Projects\Package1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

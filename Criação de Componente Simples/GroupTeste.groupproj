@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{EEEED9C3-8DF3-4595-9BFB-44D0F6D99D48}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="TFuncUtils.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Project Test\ProjectTest.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="TFuncUtils">
+        <MSBuild Projects="TFuncUtils.dproj"/>
+    </Target>
+    <Target Name="TFuncUtils:Clean">
+        <MSBuild Projects="TFuncUtils.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TFuncUtils:Make">
+        <MSBuild Projects="TFuncUtils.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ProjectTest">
+        <MSBuild Projects="Project Test\ProjectTest.dproj"/>
+    </Target>
+    <Target Name="ProjectTest:Clean">
+        <MSBuild Projects="Project Test\ProjectTest.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ProjectTest:Make">
+        <MSBuild Projects="Project Test\ProjectTest.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="TFuncUtils;ProjectTest"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="TFuncUtils:Clean;ProjectTest:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="TFuncUtils:Make;ProjectTest:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

@@ -5,7 +5,7 @@ interface
   type
     IEletronic = Interface
       ['{717BB24B-6C23-4C4E-9B3E-9E782E25AEAD}']
-
+             procedure AddEletronic;
     End;
 
     TEletronic = class(TInterfacedObject, IEletronic)
@@ -14,7 +14,7 @@ interface
       public
       constructor Create;
         class function New : IEletronic;
-        class procedure AddEletronic;
+        procedure AddEletronic;
     end;
 implementation
 
@@ -23,7 +23,7 @@ uses
 
 { TEletronic }
 
-class procedure TEletronic.AddEletronic;
+ procedure TEletronic.AddEletronic;
 begin
  Showmessage('New Eletronic Added');
 end;
