@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{B7E81D12-CFA8-42D6-A2AE-F8C222582845}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="App Test Component\Tester.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CmdRead\CmdRead.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Tester">
+        <MSBuild Projects="App Test Component\Tester.dproj"/>
+    </Target>
+    <Target Name="Tester:Clean">
+        <MSBuild Projects="App Test Component\Tester.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Tester:Make">
+        <MSBuild Projects="App Test Component\Tester.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CmdRead">
+        <MSBuild Projects="CmdRead\CmdRead.dproj"/>
+    </Target>
+    <Target Name="CmdRead:Clean">
+        <MSBuild Projects="CmdRead\CmdRead.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CmdRead:Make">
+        <MSBuild Projects="CmdRead\CmdRead.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Tester;CmdRead"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Tester:Clean;CmdRead:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Tester:Make;CmdRead:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

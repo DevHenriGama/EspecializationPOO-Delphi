@@ -1,0 +1,12 @@
+unit Handle;
+
+interface
+
+  type
+    THandleCmd = class(TInterfacedObject)
+
+    end;
+
+implementation
+
+end.

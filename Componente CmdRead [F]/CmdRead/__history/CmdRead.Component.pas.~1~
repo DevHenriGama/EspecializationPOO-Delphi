@@ -1,0 +1,26 @@
+unit CmdRead.Component;
+
+interface
+     uses System.Classes;
+
+procedure register;
+
+  type
+    TCmdRead = class(TComponent)
+
+    private
+
+    public
+
+    published
+
+    end;
+
+implementation
+
+procedure Register;
+begin
+ RegisterComponents('DevHenriComp',[TCmdRead]);
+end;
+
+end.

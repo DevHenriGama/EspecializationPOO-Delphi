@@ -1,0 +1,11 @@
+unit IHandle;
+
+interface
+  type
+    IHandleCmd = Interface
+      ['{CB248F92-D75D-4550-BFC4-4001D9CD9E68}']
+
+    End;
+implementation
+
+end.
