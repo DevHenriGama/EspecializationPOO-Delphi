@@ -28,7 +28,8 @@ package CmdRead;
 {$IMPLICITBUILD ON}
 
 requires
-  rtl;
+  rtl,
+  vcl;
 
 contains
   CmdRead.Component in 'CmdRead.Component.pas',

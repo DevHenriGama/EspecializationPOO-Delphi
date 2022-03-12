@@ -44,12 +44,15 @@ end;
 
 constructor TCmdRead.Create;
 begin
- FiHandle := THandleCmd.Create;
+
 end;
 
 procedure TCmdRead.ProcessingInCMD;
+var
+ TemString : String;
 begin
- FiHandle.TempFileName(FTempFileName).PathScript(FScriptPath).
+  TemString :=THandleCmd.New.TempFileName(FTempFileName).PathScript(FScriptPath).Handle;
+ OnExecute(TemString);
 end;
 
 procedure TCmdRead.SetOnExecute(const Value: TOnExecute);

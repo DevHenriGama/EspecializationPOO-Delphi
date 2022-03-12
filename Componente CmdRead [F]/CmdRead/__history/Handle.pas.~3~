@@ -1,0 +1,70 @@
+unit Handle;
+
+interface
+
+uses IHandle;
+
+  type
+    THandleCmd = class(TInterfacedObject, IHandleCmd)
+    private
+       FTempFileName : String;
+       FPathSript : String;
+    public
+      constructor Create;
+      destructor Destroy;override;
+      class Function New : IHandleCmd;
+      function TempFileName( FileName : String) : IHandleCmd; overload;
+       function TempFileName : String;overload;
+       function PathScript(PathFile : String) :IHandleCmd; overload;
+       function PathScript : String;overload;
+       function Handle : String;
+    end;
+
+implementation
+
+{ THandleCmd }
+
+constructor THandleCmd.Create;
+begin
+
+end;
+
+destructor THandleCmd.Destroy;
+begin
+
+  inherited;
+end;
+
+function THandleCmd.Handle: String;
+begin
+
+end;
+
+class function THandleCmd.New: IHandleCmd;
+begin
+ Result := THandleCmd.Create;
+end;
+
+function THandleCmd.PathScript(PathFile: String): IHandleCmd;
+begin
+  Result := Self;
+  FPathSript := PathFile;
+end;
+
+function THandleCmd.PathScript: String;
+begin
+ Result := FPathSript;
+end;
+
+function THandleCmd.TempFileName(FileName: String): IHandleCmd;
+begin
+Result := Self;
+FTempFileName := FileName;
+end;
+
+function THandleCmd.TempFileName: String;
+begin
+Result := FTempFileName;
+end;
+
+end.

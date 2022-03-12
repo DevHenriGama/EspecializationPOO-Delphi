@@ -8,6 +8,7 @@ interface
        function TempFileName : String;overload;
        function PathScript(PathFile : String) :IHandleCmd; overload;
        function PathScript : String;overload;
+       function Handle : String;
     End;
 implementation
 

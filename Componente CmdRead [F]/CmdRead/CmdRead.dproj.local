@@ -1,13 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
-  <Transactions>
-    <Transaction>2022/03/11 15:46:51.588,=rtl.dcp</Transaction>
-    <Transaction>2022/03/11 15:46:58.204,=C:\Users\darke\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
-    <Transaction>2022/03/11 15:53:39.321,C:\Users\darke\Desktop\Projects\Delphi\Estudos\Especialização POO Delphi\EspecializationPOO-Delphi\Componente CmdRead [F]\CmdRead\CmdRead.Component.pas=C:\Users\darke\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
-    <Transaction>2022/03/11 15:54:33.992,C:\Users\darke\Desktop\Projects\Delphi\Estudos\Especialização POO Delphi\EspecializationPOO-Delphi\Componente CmdRead [F]\CmdRead\CmdRead.dproj=C:\Users\darke\Documents\Embarcadero\Studio\Projects\Package1.dproj</Transaction>
-    <Transaction>2022/03/11 16:10:08.576,=C:\Users\darke\Desktop\Projects\Delphi\Estudos\Especialização POO Delphi\EspecializationPOO-Delphi\Componente CmdRead [F]\CmdRead\Unit1.pas</Transaction>
-    <Transaction>2022/03/11 16:11:17.028,=C:\Users\darke\Desktop\Projects\Delphi\Estudos\Especialização POO Delphi\EspecializationPOO-Delphi\Componente CmdRead [F]\CmdRead\Unit2.pas</Transaction>
-    <Transaction>2022/03/11 16:12:04.559,C:\Users\darke\Desktop\Projects\Delphi\Estudos\Especialização POO Delphi\EspecializationPOO-Delphi\Componente CmdRead [F]\CmdRead\Handle.pas=C:\Users\darke\Desktop\Projects\Delphi\Estudos\Especialização POO Delphi\EspecializationPOO-Delphi\Componente CmdRead [F]\CmdRead\Unit2.pas</Transaction>
-    <Transaction>2022/03/11 16:12:09.993,C:\Users\darke\Desktop\Projects\Delphi\Estudos\Especialização POO Delphi\EspecializationPOO-Delphi\Componente CmdRead [F]\CmdRead\IHandle.pas=C:\Users\darke\Desktop\Projects\Delphi\Estudos\Especialização POO Delphi\EspecializationPOO-Delphi\Componente CmdRead [F]\CmdRead\Unit1.pas</Transaction>
+	<Transactions>
+    <Transaction>2022/03/11 15:46:51.000.588,=rtl.dcp</Transaction>
+    <Transaction>2022/03/11 15:46:58.000.204,=C:\Users\darke\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2022/03/11 15:53:39.000.321,C:\Users\darke\Documents\Embarcadero\Studio\Projects\Unit2.pas=C:\Users\darke\Desktop\Projects\Delphi\Estudos\Especialização POO Delphi\EspecializationPOO-Delphi\Componente CmdRead [F]\CmdRead\CmdRead.Component.pas</Transaction>
+    <Transaction>2022/03/11 15:54:33.000.992,C:\Users\darke\Documents\Embarcadero\Studio\Projects\Package1.dproj=C:\Users\darke\Desktop\Projects\Delphi\Estudos\Especialização POO Delphi\EspecializationPOO-Delphi\Componente CmdRead [F]\CmdRead\CmdRead.dproj</Transaction>
+    <Transaction>2022/03/11 16:10:08.000.576,=C:\Users\darke\Desktop\Projects\Delphi\Estudos\Especialização POO Delphi\EspecializationPOO-Delphi\Componente CmdRead [F]\CmdRead\Unit1.pas</Transaction>
+    <Transaction>2022/03/11 16:11:17.000.028,=C:\Users\darke\Desktop\Projects\Delphi\Estudos\Especialização POO Delphi\EspecializationPOO-Delphi\Componente CmdRead [F]\CmdRead\Unit2.pas</Transaction>
+    <Transaction>2022/03/11 16:12:04.000.559,C:\Users\darke\Desktop\Projects\Delphi\Estudos\Especialização POO Delphi\EspecializationPOO-Delphi\Componente CmdRead [F]\CmdRead\Unit2.pas=C:\Users\darke\Desktop\Projects\Delphi\Estudos\Especialização POO Delphi\EspecializationPOO-Delphi\Componente CmdRead [F]\CmdRead\Handle.pas</Transaction>
+    <Transaction>2022/03/11 16:12:09.000.993,C:\Users\darke\Desktop\Projects\Delphi\Estudos\Especialização POO Delphi\EspecializationPOO-Delphi\Componente CmdRead [F]\CmdRead\Unit1.pas=C:\Users\darke\Desktop\Projects\Delphi\Estudos\Especialização POO Delphi\EspecializationPOO-Delphi\Componente CmdRead [F]\CmdRead\IHandle.pas</Transaction>
+    <Transaction>2022/03/12 10:49:04.150,=vcl.dcp</Transaction>
   </Transactions>
 </BorlandProject>
