@@ -1,0 +1,20 @@
+unit uCategorize.Model.TItem;
+
+interface
+
+ type
+    TItemClass = class
+
+    private
+      FState : String;
+      FDescription : String;
+      FPicturePath : String;
+      FContainer : integer;
+      FType : TItemType;
+    public
+
+    end;
+
+implementation
+
+end.

@@ -1,0 +1,26 @@
+unit uCategorize.Model.TItem;
+
+interface
+
+uses
+  uCategorize.Model.TItemType;
+
+ type
+    TItemClass = class
+
+    private
+      FItem : String;
+      FState : String;
+      FDescription : String;
+      FPicturePath : String;
+      FContainer : integer;
+      FType : TItemType;
+    public
+      constructor Create;
+      destructor Destroy; override;
+      function New :
+    end;
+
+implementation
+
+end.

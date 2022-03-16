@@ -1,0 +1,44 @@
+unit MainForm;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs,  Vcl.StdCtrls, Classe.Main;
+
+type
+  TTesteComponentForm = class(TForm)
+    Memo1: TMemo;
+    Test: TButton;
+    FuncUtils1: TFuncUtils;
+    Edit1: TEdit;
+    procedure FuncUtils1WorkString(Sender: TObject);
+    procedure TestClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  TesteComponentForm: TTesteComponentForm;
+
+implementation
+
+{$R *.dfm}
+
+
+
+{ TTesteComponentForm }
+
+procedure TTesteComponentForm.FuncUtils1WorkString(Sender: TObject);
+begin
+Memo1.Lines.Add(TFuncUtils(Sender).VarString);
+end;
+
+procedure TTesteComponentForm.TestClick(Sender: TObject);
+begin
+memo1.Lines.Add(IntToStr(FuncUtils1.GetLegth(Edit1.Text))) ;
+end;
+
+end.

@@ -1,0 +1,19 @@
+unit uCategorize.Model.TItemType;
+
+interface
+
+uses uCategorize.Model.IItemType;
+
+  type
+
+    TItemType = class(TInterfacedObject,IItemType)
+
+    private
+
+    public
+
+    end;
+
+implementation
+
+end.

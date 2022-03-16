@@ -1,0 +1,15 @@
+program ItemCategorize;
+
+uses
+  System.StartUpCopy,
+  FMX.Forms,
+  uCategorize.View.Main in 'view\uCategorize.View.Main.pas' {Form1},
+  uCategorize.Model.TItem in 'model\Itens\uCategorize.Model.TItem.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TForm1, Form1);
+  Application.Run;
+end.

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/03/14 21:16:33.000.446,=F:\Progamação\Projects\Delphi\Unit1.pas</Transaction>
+    <Transaction>2022/03/14 21:17:29.000.564,F:\Progamação\Projects\Delphi\Unit1.fmx=F:\Progamação\Projects\Delphi\ItemCategorize\view\uCategorize.View.Main.fmx</Transaction>
+    <Transaction>2022/03/14 21:17:29.000.564,F:\Progamação\Projects\Delphi\Unit1.pas=F:\Progamação\Projects\Delphi\ItemCategorize\view\uCategorize.View.Main.pas</Transaction>
+    <Transaction>2022/03/14 21:17:41.000.489,F:\Progamação\Projects\Delphi\Project1.dproj=F:\Progamação\Projects\Delphi\ItemCategorize\ItemCategorize.dproj</Transaction>
+    <Transaction>2022/03/15 21:52:52.607,=F:\Progamação\Projects\Delphi\ItemCategorize\Unit1.pas</Transaction>
+    <Transaction>2022/03/15 21:55:55.861,F:\Progamação\Projects\Delphi\ItemCategorize\model\Itens\uCategorize.Model.TItem.pas=F:\Progamação\Projects\Delphi\ItemCategorize\Unit1.pas</Transaction>
+    <Transaction>2022/03/15 21:56:07.715,=F:\Progamação\Projects\Delphi\ItemCategorize\Unit1.pas</Transaction>
+    <Transaction>2022/03/15 21:56:47.660,F:\Progamação\Projects\Delphi\ItemCategorize\model\Itens\uCategorize.Model.TItemType.pas=F:\Progamação\Projects\Delphi\ItemCategorize\Unit1.pas</Transaction>
+    <Transaction>2022/03/15 21:58:21.861,=F:\Progamação\Projects\Delphi\ItemCategorize\Unit1.pas</Transaction>
+    <Transaction>2022/03/15 22:35:26.231,F:\Progamação\Projects\Delphi\ItemCategorize\model\Itens\uCategorize.Model.IItem.pas=F:\Progamação\Projects\Delphi\ItemCategorize\Unit1.pas</Transaction>
+    <Transaction>2022/03/15 22:39:28.484,=F:\Progamação\Projects\Delphi\ItemCategorize\Unit1.pas</Transaction>
+    <Transaction>2022/03/15 22:39:59.276,F:\Progamação\Projects\Delphi\ItemCategorize\model\Itens\uCategorize.Model.IItemType.pas=F:\Progamação\Projects\Delphi\ItemCategorize\Unit1.pas</Transaction>
+    <Transaction>2022/03/15 22:42:39.348,F:\Progamação\Projects\Delphi\ItemCategorize\model\Itens\uCategorize.Model.IItemType.pas=</Transaction>
+    <Transaction>2022/03/15 23:06:40.814,=F:\Progamação\Projects\Delphi\ItemCategorize\Unit1.pas</Transaction>
+    <Transaction>2022/03/15 23:06:50.904,=F:\Progamação\Projects\Delphi\ItemCategorize\Unit2.pas</Transaction>
+    <Transaction>2022/03/15 23:07:04.543,F:\Progamação\Projects\Delphi\ItemCategorize\view\uCategorize.View.Item.pas=F:\Progamação\Projects\Delphi\ItemCategorize\Unit2.pas</Transaction>
+    <Transaction>2022/03/15 23:07:04.543,F:\Progamação\Projects\Delphi\ItemCategorize\view\uCategorize.View.Item.fmx=F:\Progamação\Projects\Delphi\ItemCategorize\Unit2.fmx</Transaction>
+  </Transactions>
+</BorlandProject>
