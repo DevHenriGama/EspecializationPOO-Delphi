@@ -1,0 +1,16 @@
+program ItemStockProject;
+
+uses
+  System.StartUpCopy,
+  FMX.Forms,
+  uItemStock.view.Main in 'view\uItemStock.view.Main.pas' {Form1},
+  uItemStock.Model.ClassItem in 'model\uItemStock.Model.ClassItem.pas',
+  uItemStock.Model.Interfaces in 'model\uItemStock.Model.Interfaces.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TForm1, Form1);
+  Application.Run;
+end.

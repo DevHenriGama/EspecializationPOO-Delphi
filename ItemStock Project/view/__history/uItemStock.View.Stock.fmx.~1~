@@ -1,0 +1,54 @@
+object Form2: TForm2
+  Left = 0
+  Top = 0
+  Caption = 'Form2'
+  ClientHeight = 480
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object Edit1: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 0
+    Position.X = 128.000000000000000000
+    Position.Y = 88.000000000000000000
+  end
+  object Edit2: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 1
+    Position.X = 128.000000000000000000
+    Position.Y = 120.000000000000000000
+  end
+  object Edit3: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 2
+    Position.X = 128.000000000000000000
+    Position.Y = 160.000000000000000000
+  end
+  object Edit4: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 3
+    Position.X = 128.000000000000000000
+    Position.Y = 192.000000000000000000
+  end
+  object Edit5: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 4
+    Position.X = 128.000000000000000000
+    Position.Y = 232.000000000000000000
+  end
+  object Edit6: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 5
+    Position.X = 128.000000000000000000
+    Position.Y = 272.000000000000000000
+  end
+  object Button1: TButton
+    Position.X = 280.000000000000000000
+    Position.Y = 272.000000000000000000
+    TabOrder = 7
+    Text = 'Inserir'
+    OnClick = Button1Click
+  end
+end

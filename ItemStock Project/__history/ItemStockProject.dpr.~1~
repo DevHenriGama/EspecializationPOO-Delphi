@@ -1,0 +1,14 @@
+program ItemStockProject;
+
+uses
+  System.StartUpCopy,
+  FMX.Forms,
+  uItemStock.view.Main in 'view\uItemStock.view.Main.pas' {Form1};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TForm1, Form1);
+  Application.Run;
+end.

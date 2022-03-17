@@ -1,0 +1,25 @@
+unit uItemStock.Controller.Classitem;
+
+interface
+
+uses uItemStock.Controller.Interfaces;
+
+  type
+    TControllerItem = class(TInterfacedObject, IControllerItem)
+
+      private
+
+      public
+        class function New : IControllerItem;
+    end;
+
+implementation
+
+{ TControllerItem }
+
+class function TControllerItem.New: IControllerItem;
+begin
+Result := Self.Create;
+end;
+
+end.
