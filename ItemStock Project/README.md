@@ -16,6 +16,7 @@ solução ultilizando as têcnicas, Assim veio a Ideia do Item Stock,
   *Clean Code
   *Principios do S.O.L.I.D
   *Design Patterns (Observer)
+  *MVC
   
   Foram Ultilizadas de forma bem Simples, Somente para Mostar um pouco dos meus conhecimentos e
   mostrar algumas das Têcnicas na qual ultilizamos durante o periodo da especialização.
