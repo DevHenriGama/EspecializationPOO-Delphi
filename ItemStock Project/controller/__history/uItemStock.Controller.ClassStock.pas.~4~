@@ -4,7 +4,7 @@ interface
 
 uses
   uItemStock.Controller.Interfaces, uItemStock.Controller.Classitem,
-  uItemStock.Model.ClassTypeItens, uItemStock.Model.Interfaces;
+  uItemStock.Model.ClassTypeItens;
 
   type
     TControllerStock = class(TInterfacedObject , IControllerStock)

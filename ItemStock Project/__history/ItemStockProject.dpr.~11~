@@ -11,9 +11,7 @@ uses
   uItemStock.Controller.ClassStock in 'controller\uItemStock.Controller.ClassStock.pas',
   uItemStock.Controller.Classitem in 'controller\uItemStock.Controller.Classitem.pas',
   uItemStock.View.Stock in 'view\uItemStock.View.Stock.pas' {Form2},
-  uItemStock.Dao.Instruction in 'dao\uItemStock.Dao.Instruction.pas',
-  uItemStock.Dao.Interfaces in 'dao\uItemStock.Dao.Interfaces.pas',
-  uItemStock.Dao.DataModule in 'dao\uItemStock.Dao.DataModule.pas' {dmDados: TDataModule};
+  uItemStock.Dao.Instruction in 'dao\uItemStock.Dao.Instruction.pas';
 
 {$R *.res}
 

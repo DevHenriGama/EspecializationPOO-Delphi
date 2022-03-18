@@ -1,0 +1,16 @@
+unit uItemStock.Dao.Interfaces;
+
+interface
+
+uses
+  FireDAC.Comp.Client;
+
+  type
+  IDaoInstruction = interface
+    ['{9346DA1C-07D5-4528-AA77-E9B53CA0405D}']
+     procedure InsertItem( Connection : TFDConnection );
+  end;
+
+implementation
+
+end.

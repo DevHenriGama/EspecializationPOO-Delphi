@@ -16,7 +16,6 @@ uses uItemStock.Controller.Interfaces, uItemStock.Model.Interfaces,
          FPicturePath : String;
          FContainer : Integer;
          FStockItem : TItem;
-         FTypeItem : String;
       public
         constructor Create;
         destructor Destroy;override;
@@ -27,7 +26,6 @@ uses uItemStock.Controller.Interfaces, uItemStock.Model.Interfaces,
           function Description(Des_Item : String) : IControllerItem;
           function PicturePath( Path : String) : IControllerItem;
           function Container( NumContainer : Integer) : IControllerItem;
-          function TypeItenm(_TypeItem  : String) : IControllerItem;
           procedure Add;
     end;
 
@@ -98,12 +96,6 @@ function TControllerItem.State(ItemState: String): IControllerItem;
 begin
 Result := Self;
 FState := ItemState;
-end;
-
-function TControllerItem.TypeItenm(_TypeItem: String): IControllerItem;
-begin
- Result := Self;
- FTypeItem := _TypeItem;
 end;
 
 end.

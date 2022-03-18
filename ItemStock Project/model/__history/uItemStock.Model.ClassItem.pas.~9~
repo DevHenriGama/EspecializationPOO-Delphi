@@ -23,8 +23,6 @@ uses
         procedure SetState(const Value: String);
         procedure SetTypeItem(const Value: String);
       public
-        constructor Create;
-        destructor Destroy;override;
         property ID : Integer read FID write SetID;
         property Item : String read FItem write SetItem;
         property Description : String read FDescription write SetDescription;
@@ -41,17 +39,6 @@ uses
   FMX.Dialogs;
 
 { TItem }
-
-constructor TItem.Create;
-begin
-
-end;
-
-destructor TItem.Destroy;
-begin
-
-  inherited;
-end;
 
 procedure TItem.Insert;
 begin

@@ -2,16 +2,12 @@ unit uItemStock.Controller.Interfaces;
 
 interface
 
-uses
-  uItemStock.Model.Interfaces;
-
   type
     IControllerItem = Interface;
 
     IControllerStock = interface
     ['{70F6AB0F-CB46-4D13-8D6E-8CBBB65CD156}']
       function StockItem : IControllerItem;
-      function MyType : ITypeItens;
     end;
 
     IControllerItem = interface

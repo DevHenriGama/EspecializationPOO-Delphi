@@ -9,47 +9,88 @@ object Form2: TForm2
   FormFactor.Devices = [Desktop]
   OnShow = FormShow
   DesignerMasterStyle = 0
-  object Edit1: TEdit
+  object edtID: TEdit
     Touch.InteractiveGestures = [LongTap, DoubleTap]
     TabOrder = 0
-    Position.X = 128.000000000000000000
-    Position.Y = 88.000000000000000000
+    Position.X = 32.000000000000000000
+    Position.Y = 49.000000000000000000
   end
-  object Edit2: TEdit
+  object edtContainer: TEdit
     Touch.InteractiveGestures = [LongTap, DoubleTap]
     TabOrder = 1
-    Position.X = 128.000000000000000000
-    Position.Y = 120.000000000000000000
+    Position.X = 32.000000000000000000
+    Position.Y = 104.000000000000000000
   end
-  object Edit3: TEdit
+  object edtItem: TEdit
     Touch.InteractiveGestures = [LongTap, DoubleTap]
     TabOrder = 2
-    Position.X = 128.000000000000000000
-    Position.Y = 160.000000000000000000
+    Position.X = 32.000000000000000000
+    Position.Y = 162.000000000000000000
   end
-  object Edit4: TEdit
+  object edtDescription: TEdit
     Touch.InteractiveGestures = [LongTap, DoubleTap]
     TabOrder = 3
-    Position.X = 128.000000000000000000
-    Position.Y = 192.000000000000000000
+    Position.X = 32.000000000000000000
+    Position.Y = 224.000000000000000000
   end
-  object Edit5: TEdit
+  object edtState: TEdit
     Touch.InteractiveGestures = [LongTap, DoubleTap]
     TabOrder = 4
-    Position.X = 128.000000000000000000
-    Position.Y = 232.000000000000000000
-  end
-  object Edit6: TEdit
-    Touch.InteractiveGestures = [LongTap, DoubleTap]
-    TabOrder = 5
-    Position.X = 128.000000000000000000
-    Position.Y = 272.000000000000000000
+    Position.X = 32.000000000000000000
+    Position.Y = 288.000000000000000000
   end
   object Button1: TButton
-    Position.X = 280.000000000000000000
-    Position.Y = 272.000000000000000000
-    TabOrder = 6
+    Position.X = 528.000000000000000000
+    Position.Y = 427.000000000000000000
+    TabOrder = 5
     Text = 'Inserir'
     OnClick = Button1Click
+  end
+  object lblD: TLabel
+    Position.X = 32.000000000000000000
+    Position.Y = 24.000000000000000000
+    Text = 'lblD'
+    TabOrder = 7
+  end
+  object lblContainer: TLabel
+    Position.X = 32.000000000000000000
+    Position.Y = 79.000000000000000000
+    Text = 'lblContainer'
+    TabOrder = 8
+  end
+  object lblType: TLabel
+    Position.X = 32.000000000000000000
+    Position.Y = 327.000000000000000000
+    Text = 'lblType'
+    TabOrder = 9
+  end
+  object lblItem: TLabel
+    Position.X = 32.000000000000000000
+    Position.Y = 137.000000000000000000
+    Text = 'lblItem'
+    TabOrder = 10
+  end
+  object lblDescription: TLabel
+    Position.X = 32.000000000000000000
+    Position.Y = 199.000000000000000000
+    Text = 'lblDescription'
+    TabOrder = 11
+  end
+  object lblState: TLabel
+    Position.X = 32.000000000000000000
+    Position.Y = 263.000000000000000000
+    Text = 'lblState'
+    TabOrder = 12
+  end
+  object lblPath: TLabel
+    Position.X = 32.000000000000000000
+    Position.Y = 432.000000000000000000
+    Text = 'lblPath'
+    TabOrder = 13
+  end
+  object cbxTypeitens: TComboBox
+    Position.X = 32.000000000000000000
+    Position.Y = 352.000000000000000000
+    TabOrder = 14
   end
 end

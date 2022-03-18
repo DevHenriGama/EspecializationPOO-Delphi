@@ -3,25 +3,18 @@ unit uItemStock.Controller.ClassStock;
 interface
 
 uses
-  uItemStock.Controller.Interfaces, uItemStock.Controller.Classitem,
-  uItemStock.Model.ClassTypeItens, uItemStock.Model.Interfaces;
+  uItemStock.Controller.Interfaces, uItemStock.Controller.Classitem;
 
   type
     TControllerStock = class(TInterfacedObject , IControllerStock)
 
       public
         function StockItem : IControllerItem;
-        function MyType : ITypeItens;
     end;
 
 implementation
 
 { TControllerStock }
-
-function TControllerStock.MyType: ITypeItens;
-begin
- Result := TTypeItens.Create;
-end;
 
 function TControllerStock.StockItem: IControllerItem;
 begin

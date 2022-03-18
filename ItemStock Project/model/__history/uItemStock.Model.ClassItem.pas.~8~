@@ -10,7 +10,7 @@ uses
       private
         FContainer: Integer;
         FPicturePath: String;
-        FTypeItem: String;
+        FTypeItem: ITypeItens;
         FState: String;
         FID: Integer;
         FDescription: String;
@@ -21,15 +21,13 @@ uses
         procedure SetItem(const Value: String);
         procedure SetPicturePath(const Value: String);
         procedure SetState(const Value: String);
-        procedure SetTypeItem(const Value: String);
+        procedure SetTypeItem(const Value: ITypeItens);
       public
-        constructor Create;
-        destructor Destroy;override;
         property ID : Integer read FID write SetID;
         property Item : String read FItem write SetItem;
         property Description : String read FDescription write SetDescription;
         property PicturePath : String read FPicturePath write SetPicturePath;
-        property TypeItem : String read FTypeItem write SetTypeItem;
+        property TypeItem : ITypeItens read FTypeItem write SetTypeItem;
         property State : String read FState write SetState;
         property Container : Integer read FContainer write SetContainer;
         procedure Insert;
@@ -41,17 +39,6 @@ uses
   FMX.Dialogs;
 
 { TItem }
-
-constructor TItem.Create;
-begin
-
-end;
-
-destructor TItem.Destroy;
-begin
-
-  inherited;
-end;
 
 procedure TItem.Insert;
 begin
@@ -89,7 +76,7 @@ begin
   FState := Value;
 end;
 
-procedure TItem.SetTypeItem(const Value: String);
+procedure TItem.SetTypeItem(const Value: ITypeItens);
 begin
   FTypeItem := Value;
 end;

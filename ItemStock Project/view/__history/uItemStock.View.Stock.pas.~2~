@@ -6,24 +6,17 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
   uItemStock.Controller.ClassStock, uItemStock.Controller.Interfaces,
-  FMX.Controls.Presentation, FMX.Edit, FMX.StdCtrls, FMX.ListBox;
+  FMX.Controls.Presentation, FMX.Edit, FMX.StdCtrls;
 
 type
   TForm2 = class(TForm)
-    edtID: TEdit;
-    edtContainer: TEdit;
-    edtItem: TEdit;
-    edtDescription: TEdit;
-    edtState: TEdit;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Edit3: TEdit;
+    Edit4: TEdit;
+    Edit5: TEdit;
+    Edit6: TEdit;
     Button1: TButton;
-    lblD: TLabel;
-    lblContainer: TLabel;
-    lblType: TLabel;
-    lblItem: TLabel;
-    lblDescription: TLabel;
-    lblState: TLabel;
-    lblPath: TLabel;
-    cbxTypeitens: TComboBox;
     procedure Button1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
   private
@@ -47,13 +40,12 @@ implementation
 procedure TForm2.Button1Click(Sender: TObject);
 begin
  Stock.StockItem
-  .ID(StrToInt(edtID.Text))
-  .Item(edtItem.Text)
-  .State(edtState.Text)
-  .Description(edtDescription.Text)
-  .PicturePath(lblPath.Text)
-  .Container(StrToInt(edtContainer.Text))
-  .TypeItenm(cbxTypeitens.Items.Text)
+  .ID(StrToInt(Edit1.Text))
+  .Item(Edit2.Text)
+  .State(Edit3.Text)
+  .Description(Edit4.Text)
+  .PicturePath(Edit5.Text)
+  .Container(StrToInt(Edit6.Text))
   .Add;
 
 end;
