@@ -15,3 +15,7 @@ TCar = class
     private
         FMotor : MOTORV6; //Assim a ultilizamos
 end;
+
+##Sobre o Exemplo
+
+<p> Nesse Exemplo usei uma ideia diferente do carro , usei parte da abstração de um projeto para cria-lô </p>
