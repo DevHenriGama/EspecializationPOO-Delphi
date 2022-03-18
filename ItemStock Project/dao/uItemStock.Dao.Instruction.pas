@@ -41,7 +41,16 @@ begin
   with FQuery do begin
     Close;
     SQL.Clear;
-    SQL.Add('');
+    SQL.Add('INSERT INTO ITENS (ITEMNAME, STATE, DESCRIPTION, TYPES, CONTAINER, PATH) ' +
+      'VALUES (:name, :state, :des , :type , :cont , :path)');
+    with FItens do begin
+      ParamByName('name').AsString := Item;
+      ParamByName('state').AsString := State;
+      ParamByName('des').AsString := Description;
+      ParamByName('type').AsString := TypeItem;
+      ParamByName('cont').AsInteger :=  Container;
+      ParamByName('path').AsString := PicturePath;
+    end;
     ExecSQL;
   end;
 end;

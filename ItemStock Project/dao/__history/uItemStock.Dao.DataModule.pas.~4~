@@ -1,0 +1,45 @@
+unit uItemStock.Dao.DataModule;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def,
+  FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.FMXUI.Wait,
+  Data.DB, FireDAC.Comp.Client, FireDAC.Stan.Param, FireDAC.DatS,
+  FireDAC.DApt.Intf, FireDAC.DApt, FireDAC.Comp.DataSet,
+  uItemStock.Dao.Interfaces;
+
+type
+  TdmDados = class(TDataModule, iConnection)
+    Connection: TFDConnection;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    class function New : iConnection;
+    function fdConnection : TFDConnection;
+  end;
+
+var
+  dmDados: TdmDados;
+
+implementation
+
+{%CLASSGROUP 'FMX.Controls.TControl'}
+
+{$R *.dfm}
+
+{ TdmDados }
+
+function TdmDados.fdConnection: TFDConnection;
+begin
+Result := fdConnection;
+end;
+
+class function TdmDados.New: iConnection;
+begin
+ Result := Self.Create(nil);
+end;
+
+end.

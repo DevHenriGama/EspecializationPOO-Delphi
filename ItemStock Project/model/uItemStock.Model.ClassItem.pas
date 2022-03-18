@@ -3,7 +3,7 @@ unit uItemStock.Model.ClassItem;
 interface
 
 uses
-  uItemStock.Model.Interfaces;
+  uItemStock.Model.Interfaces, uItemStock.Dao.Interfaces;
 
   type
     TItem = class
@@ -15,6 +15,7 @@ uses
         FID: Integer;
         FDescription: String;
         FItem: String;
+        FConnection : IConnection;
         procedure SetContainer(const Value: Integer);
         procedure SetDescription(const Value: String);
         procedure SetID(const Value: Integer);
@@ -38,13 +39,13 @@ uses
 implementation
 
 uses
-  FMX.Dialogs;
+  FMX.Dialogs, uItemStock.Dao.Instruction, uItemStock.Dao.DataModule;
 
 { TItem }
 
 constructor TItem.Create;
 begin
-
+   FConnection := TdmDados.New;
 end;
 
 destructor TItem.Destroy;
@@ -55,7 +56,7 @@ end;
 
 procedure TItem.Insert;
 begin
-ShowMessage(FItem);
+ TDaoIntructions.NewInstruction(Self).InsertItem(FConnection.fdConnection);
 end;
 
 
