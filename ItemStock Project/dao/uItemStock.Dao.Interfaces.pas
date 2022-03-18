@@ -9,6 +9,8 @@ uses
   IDaoInstruction = interface
     ['{9346DA1C-07D5-4528-AA77-E9B53CA0405D}']
      procedure InsertItem( Connection : TFDConnection );
+     procedure UpdateItem(MyConnection : TFDConnection);
+     procedure DeleteItem(MyConnection : TFDConnection);
   end;
 
   iConnection = interface

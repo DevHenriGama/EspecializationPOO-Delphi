@@ -24,6 +24,8 @@ uses
       function Container( NumContainer : Integer) : IControllerItem;
       function TypeItenm(_TypeItem  : String) : IControllerItem;
       procedure Add;
+      procedure Edit;
+      procedure Remove;
     end;
 
 implementation

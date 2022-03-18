@@ -93,4 +93,17 @@ object Form2: TForm2
     Position.Y = 352.000000000000000000
     TabOrder = 14
   end
+  object Button2: TButton
+    Position.X = 416.000000000000000000
+    Position.Y = 427.000000000000000000
+    TabOrder = 15
+    Text = 'Delete'
+    OnClick = Button2Click
+    object Button3: TButton
+      Position.X = -88.000000000000000000
+      TabOrder = 5
+      Text = 'Update'
+      OnClick = Button3Click
+    end
+  end
 end

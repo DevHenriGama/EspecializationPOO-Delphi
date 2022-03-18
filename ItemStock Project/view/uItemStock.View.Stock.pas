@@ -24,8 +24,12 @@ type
     lblState: TLabel;
     lblPath: TLabel;
     cbxTypeitens: TComboBox;
+    Button2: TButton;
+    Button3: TButton;
     procedure Button1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
   private
     { Private declarations }
     Stock : IControllerStock;
@@ -56,6 +60,32 @@ begin
   .TypeItenm(cbxTypeitens.Items.Text)
   .Add;
 
+end;
+
+procedure TForm2.Button2Click(Sender: TObject);
+begin
+ Stock.StockItem
+  .ID(StrToInt(edtID.Text))
+  .Item(edtItem.Text)
+  .State(edtState.Text)
+  .Description(edtDescription.Text)
+  .PicturePath(lblPath.Text)
+  .Container(StrToInt(edtContainer.Text))
+  .TypeItenm(cbxTypeitens.Items.Text)
+  .Remove;
+end;
+
+procedure TForm2.Button3Click(Sender: TObject);
+begin
+  Stock.StockItem
+  .ID(StrToInt(edtID.Text))
+  .Item(edtItem.Text)
+  .State(edtState.Text)
+  .Description(edtDescription.Text)
+  .PicturePath(lblPath.Text)
+  .Container(StrToInt(edtContainer.Text))
+  .TypeItenm(cbxTypeitens.Items.Text)
+  .Edit;
 end;
 
 constructor TForm2.Create;

@@ -12,14 +12,12 @@ uses
   FireDAC.Stan.ExprFuncs, FireDAC.Phys.SQLiteWrapper.Stat;
 
 type
-  TdmDados = class(TDataModule, iConnection)
+  TdmDados = class(TDataModule)
     Connection: TFDConnection;
   private
     { Private declarations }
   public
     { Public declarations }
-    class function New : iConnection;
-    function fdConnection : TFDConnection;
   end;
 
 var
@@ -32,15 +30,4 @@ implementation
 {$R *.dfm}
 
 { TdmDados }
-
-function TdmDados.fdConnection: TFDConnection;
-begin
-Result := fdConnection;
-end;
-
-class function TdmDados.New: iConnection;
-begin
- Result := Self.Create(nil);
-end;
-
 end.

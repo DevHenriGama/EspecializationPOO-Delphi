@@ -29,6 +29,8 @@ uses uItemStock.Controller.Interfaces, uItemStock.Model.Interfaces,
           function Container( NumContainer : Integer) : IControllerItem;
           function TypeItenm(_TypeItem  : String) : IControllerItem;
           procedure Add;
+          procedure Edit;
+          procedure Remove;
     end;
 
 implementation
@@ -56,6 +58,19 @@ destructor TControllerItem.Destroy;
 begin
   FStockItem.Free;
   inherited;
+end;
+
+procedure TControllerItem.Edit;
+begin
+ with FStockItem do begin
+   ID := FID;
+   Item := FItem;
+   Description := FDescription;
+   PicturePath := FPicturePath;
+   State := FState;
+   Container := FContainer;
+   Update;
+ end;
 end;
 
 function TControllerItem.ID(IDvalue: Integer): IControllerItem;
@@ -92,6 +107,20 @@ function TControllerItem.PicturePath(Path: String): IControllerItem;
 begin
 Result := Self;
 FPicturePath := Path;
+end;
+
+procedure TControllerItem.Remove;
+begin
+ with FStockItem do begin
+   ID := FID;
+   Item := FItem;
+   Description := FDescription;
+   PicturePath := FPicturePath;
+   State := FState;
+   Container := FContainer;
+   Delete;
+ end;
+
 end;
 
 function TControllerItem.State(ItemState: String): IControllerItem;

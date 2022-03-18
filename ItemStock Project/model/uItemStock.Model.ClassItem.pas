@@ -3,7 +3,8 @@ unit uItemStock.Model.ClassItem;
 interface
 
 uses
-  uItemStock.Model.Interfaces, uItemStock.Dao.Interfaces;
+  uItemStock.Model.Interfaces, uItemStock.Dao.Interfaces,
+  uItemStock.Dao.DataModule;
 
   type
     TItem = class
@@ -15,7 +16,7 @@ uses
         FID: Integer;
         FDescription: String;
         FItem: String;
-        FConnection : IConnection;
+        FConnection : TdmDados;
         procedure SetContainer(const Value: Integer);
         procedure SetDescription(const Value: String);
         procedure SetID(const Value: Integer);
@@ -34,35 +35,46 @@ uses
         property State : String read FState write SetState;
         property Container : Integer read FContainer write SetContainer;
         procedure Insert;
+        procedure Delete;
+        procedure Update;
     end;
 
 implementation
 
 uses
-  FMX.Dialogs, uItemStock.Dao.Instruction, uItemStock.Dao.DataModule;
+  FMX.Dialogs, uItemStock.Dao.Instruction, System.SysUtils;
 
 { TItem }
 
 constructor TItem.Create;
 begin
-   FConnection := TdmDados.New;
+   FConnection := TdmDados.Create(nil);
+end;
+
+procedure TItem.Delete;
+begin
+TDaoIntructions.NewInstruction(Self).DeleteItem(FConnection.Connection);
 end;
 
 destructor TItem.Destroy;
 begin
-
+   FConnection.Free;
   inherited;
 end;
 
 procedure TItem.Insert;
 begin
- TDaoIntructions.NewInstruction(Self).InsertItem(FConnection.fdConnection);
+ TDaoIntructions.NewInstruction(Self).InsertItem(FConnection.Connection);
 end;
 
 
 procedure TItem.SetContainer(const Value: Integer);
 begin
-  FContainer := Value;
+ if Value <> 0 then
+  FContainer := Value
+  else
+    raise Exception.Create('O Container não Pode Ser vazio');
+
 end;
 
 procedure TItem.SetDescription(const Value: String);
@@ -77,7 +89,10 @@ end;
 
 procedure TItem.SetItem(const Value: String);
 begin
-  FItem := Value;
+ if Value <> '' then
+    FItem := Value
+ else
+  raise Exception.Create('O campo Nome do Item não pode estar vazio!');
 end;
 
 procedure TItem.SetPicturePath(const Value: String);
@@ -93,6 +108,11 @@ end;
 procedure TItem.SetTypeItem(const Value: String);
 begin
   FTypeItem := Value;
+end;
+
+procedure TItem.Update;
+begin
+  TDaoIntructions.NewInstruction(Self).UpdateItem(FConnection.Connection);
 end;
 
 end.
