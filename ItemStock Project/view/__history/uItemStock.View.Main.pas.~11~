@@ -1,0 +1,113 @@
+unit uItemStock.View.Main;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Imaging.pngimage,
+  Vcl.ExtCtrls, Vcl.WinXCtrls;
+
+type
+  TfrmMain = class(TForm)
+    pnlTop: TPanel;
+    btnClose: TImage;
+    lblTitle: TLabel;
+    pnlBottom: TPanel;
+    logo: TImage;
+    Image1: TImage;
+    spMenu: TSplitView;
+    Image2: TImage;
+    pnlMenu: TPanel;
+    pnlSettings: TPanel;
+    pnlStock: TPanel;
+    Image3: TImage;
+    spindicator: TShape;
+    Image4: TImage;
+    Image5: TImage;
+    procedure btnCloseClick(Sender: TObject);
+    procedure Image2Click(Sender: TObject);
+    procedure pnlStockMouseEnter(Sender: TObject);
+    procedure pnlStockMouseLeave(Sender: TObject);
+    procedure pnlSettingsMouseEnter(Sender: TObject);
+    procedure pnlSettingsMouseLeave(Sender: TObject);
+    procedure pnlStockClick(Sender: TObject);
+    procedure pnlSettingsClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+  private
+    { Private declarations }
+    procedure ButtonFx(out Button : TPanel);
+    procedure SetIndicator(out Button : TPanel);
+
+  public
+    { Public declarations }
+  end;
+
+var
+  frmMain: TfrmMain;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmMain.btnCloseClick(Sender: TObject);
+begin
+Self.Close;
+end;
+
+procedure TfrmMain.ButtonFx(out Button: TPanel);
+begin
+  with Button do begin
+    if Color = clBtnFace then
+      Color := clGrayText
+    else
+      Color := clGrayText;
+  end;
+end;
+
+procedure TfrmMain.FormShow(Sender: TObject);
+begin
+SetIndicator(pnlStock);
+end;
+
+procedure TfrmMain.Image2Click(Sender: TObject);
+begin
+spMenu.Opened := not spMenu.Opened;
+end;
+
+procedure TfrmMain.pnlSettingsClick(Sender: TObject);
+begin
+SetIndicator(pnlSettings);
+end;
+
+procedure TfrmMain.pnlSettingsMouseEnter(Sender: TObject);
+begin
+ButtonFx(pnlSettings);
+end;
+
+procedure TfrmMain.pnlSettingsMouseLeave(Sender: TObject);
+begin
+ButtonFx(pnlSettings);
+end;
+
+procedure TfrmMain.pnlStockClick(Sender: TObject);
+begin
+SetIndicator(pnlStock);
+end;
+
+procedure TfrmMain.pnlStockMouseEnter(Sender: TObject);
+begin
+ButtonFx(pnlStock);
+end;
+
+procedure TfrmMain.pnlStockMouseLeave(Sender: TObject);
+begin
+ButtonFx(pnlStock);
+end;
+
+procedure TfrmMain.SetIndicator(out Button: TPanel);
+begin
+ spindicator.Top := Button.Top;
+ spindicator.Left := 0;
+end;
+
+end.

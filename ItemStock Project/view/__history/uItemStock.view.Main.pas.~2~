@@ -1,16 +1,19 @@
-unit uItemStock.view.Main;
+unit uItemStock.View.Main;
 
 interface
 
 uses
-  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
-  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
-  FMX.Controls.Presentation, FMX.StdCtrls, uItemStock.View.Stock;
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Imaging.pngimage,
+  Vcl.ExtCtrls;
 
 type
   TForm1 = class(TForm)
-    Button1: TButton;
-    procedure Button1Click(Sender: TObject);
+    pnlTop: TPanel;
+    Image1: TImage;
+    Label1: TLabel;
+    pnlBottom: TPanel;
+    procedure Image1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -22,11 +25,11 @@ var
 
 implementation
 
-{$R *.fmx}
+{$R *.dfm}
 
-procedure TForm1.Button1Click(Sender: TObject);
+procedure TForm1.Image1Click(Sender: TObject);
 begin
-form2.Show;
+Self.Close;
 end;
 
 end.

@@ -1,38 +1,123 @@
-unit uItemStock.view.Main;
+unit uItemStock.View.Main;
 
 interface
 
 uses
-  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
-  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
-  FMX.Controls.Presentation, FMX.StdCtrls, uItemStock.View.Stock;
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Imaging.pngimage,
+  Vcl.ExtCtrls, Vcl.WinXCtrls;
 
 type
-  TForm1 = class(TForm)
-    Button1: TButton;
-    procedure Button1Click(Sender: TObject);
-    procedure FormCreate(Sender: TObject);
+  TfrmMain = class(TForm)
+    pnlTop: TPanel;
+    btnClose: TImage;
+    lblTitle: TLabel;
+    pnlBottom: TPanel;
+    logo: TImage;
+    Image1: TImage;
+    spMenu: TSplitView;
+    Image2: TImage;
+    pnlMenu: TPanel;
+    pnlSettings: TPanel;
+    pnlStock: TPanel;
+    Image3: TImage;
+    spindicator: TShape;
+    Image4: TImage;
+    Image5: TImage;
+    procedure btnCloseClick(Sender: TObject);
+    procedure Image2Click(Sender: TObject);
+    procedure pnlStockMouseEnter(Sender: TObject);
+    procedure pnlStockMouseLeave(Sender: TObject);
+    procedure pnlSettingsMouseEnter(Sender: TObject);
+    procedure pnlSettingsMouseLeave(Sender: TObject);
+    procedure pnlStockClick(Sender: TObject);
+    procedure pnlSettingsClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure lblTitleMouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
   private
     { Private declarations }
+    procedure ButtonFx(out Button : TPanel);
+    procedure SetIndicator(out Button : TPanel);
+
   public
     { Public declarations }
   end;
 
 var
-  Form1: TForm1;
+  frmMain: TfrmMain;
 
 implementation
 
-{$R *.fmx}
+{$R *.dfm}
 
-procedure TForm1.Button1Click(Sender: TObject);
+procedure TfrmMain.btnCloseClick(Sender: TObject);
 begin
-form2.Show;
+Self.Close;
 end;
 
-procedure TForm1.FormCreate(Sender: TObject);
+procedure TfrmMain.ButtonFx(out Button: TPanel);
 begin
-ReportMemoryLeaksOnShutdown := True;
+  with Button do begin
+    if Color = clBtnFace then
+      Color := clGrayText
+    else
+      Color := clGrayText;
+  end;
+end;
+
+procedure TfrmMain.FormShow(Sender: TObject);
+begin
+SetIndicator(pnlStock);
+end;
+
+procedure TfrmMain.Image2Click(Sender: TObject);
+begin
+spMenu.Opened := not spMenu.Opened;
+end;
+
+procedure TfrmMain.lblTitleMouseDown(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Integer);
+const SG = $F012;
+begin
+ ReleaseCapture;
+ Perform(WM_SYSCOMMAND,SG,0);
+end;
+
+procedure TfrmMain.pnlSettingsClick(Sender: TObject);
+begin
+SetIndicator(pnlSettings);
+end;
+
+procedure TfrmMain.pnlSettingsMouseEnter(Sender: TObject);
+begin
+ButtonFx(pnlSettings);
+end;
+
+procedure TfrmMain.pnlSettingsMouseLeave(Sender: TObject);
+begin
+ButtonFx(pnlSettings);
+end;
+
+procedure TfrmMain.pnlStockClick(Sender: TObject);
+begin
+SetIndicator(pnlStock);
+end;
+
+procedure TfrmMain.pnlStockMouseEnter(Sender: TObject);
+begin
+ButtonFx(pnlStock);
+end;
+
+procedure TfrmMain.pnlStockMouseLeave(Sender: TObject);
+begin
+ButtonFx(pnlStock);
+end;
+
+procedure TfrmMain.SetIndicator(out Button: TPanel);
+begin
+ spindicator.Top := Button.Top;
+ spindicator.Left := 0;
 end;
 
 end.
