@@ -15,3 +15,9 @@ o que mais eu poderia aprender sobre OO para melhorar a qualidade do meu código
         *Agilidade com a IDE.
         *Diretrizes da linguagem.
         *Gerenciamento de memória.
+
+<h3> Sobre os Exemplos. </h3>
+
+Eu não coloquei todos os exemplos que criei durante o curso, pois alguns deles eram bem básico,
+era sobre heranças, encapsulamentos, abstração e polimorfismo. Coloquei somente os que eu achei
+que eram diferenciados, os que apliquei os conceitos que aprendi.  
