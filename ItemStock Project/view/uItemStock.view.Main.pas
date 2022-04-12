@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Imaging.pngimage,
-  Vcl.ExtCtrls, Vcl.WinXCtrls;
+  Vcl.ExtCtrls, Vcl.WinXCtrls, uItemStock.View.ItemStock;
 
 type
   TfrmMain = class(TForm)
@@ -35,6 +35,7 @@ type
     procedure FormShow(Sender: TObject);
     procedure lblTitleMouseDown(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Integer);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
     procedure ButtonFx(out Button : TPanel);
@@ -64,6 +65,11 @@ begin
     else
       Color := clGrayText;
   end;
+end;
+
+procedure TfrmMain.FormCreate(Sender: TObject);
+begin
+ReportMemoryLeaksOnShutdown := True;
 end;
 
 procedure TfrmMain.FormShow(Sender: TObject);
@@ -102,6 +108,12 @@ end;
 procedure TfrmMain.pnlStockClick(Sender: TObject);
 begin
 SetIndicator(pnlStock);
+ try
+  frmItemStock := TfrmItemStock.create(nil);
+  frmItemStock.ShowModal;
+ finally
+   frmItemStock.Free;
+ end;
 end;
 
 procedure TfrmMain.pnlStockMouseEnter(Sender: TObject);

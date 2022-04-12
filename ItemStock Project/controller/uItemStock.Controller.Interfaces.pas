@@ -3,7 +3,7 @@ unit uItemStock.Controller.Interfaces;
 interface
 
 uses
-  uItemStock.Model.Interfaces;
+  uItemStock.Model.Interfaces, FireDAC.Comp.Client;
 
   type
     IControllerItem = Interface;
@@ -26,6 +26,11 @@ uses
       procedure Add;
       procedure Edit;
       procedure Remove;
+    end;
+
+    IPersistentData = interface
+      ['{82E949DC-7598-4AFA-A3BC-2F655DD61B1C}']
+      function GetDataPersistent : TFDQuery;
     end;
 
 implementation

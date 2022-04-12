@@ -9,11 +9,13 @@ uses
   Data.DB, FireDAC.Comp.Client, FireDAC.Stan.Param, FireDAC.DatS,
   FireDAC.DApt.Intf, FireDAC.DApt, FireDAC.Comp.DataSet,
   uItemStock.Dao.Interfaces, FireDAC.Phys.SQLite, FireDAC.Phys.SQLiteDef,
-  FireDAC.Stan.ExprFuncs, FireDAC.Phys.SQLiteWrapper.Stat;
+  FireDAC.Stan.ExprFuncs, FireDAC.Phys.SQLiteWrapper.Stat, FireDAC.Comp.UI;
 
 type
   TdmDados = class(TDataModule)
     Connection: TFDConnection;
+    queryDataPersistent: TFDQuery;
+    FDGUIxWaitCursor1: TFDGUIxWaitCursor;
   private
     { Private declarations }
   public

@@ -12,14 +12,15 @@ object frmMain: TfrmMain
   Font.Name = 'Segoe UI'
   Font.Style = []
   Position = poScreenCenter
+  OnCreate = FormCreate
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 15
   object Image1: TImage
     Left = 200
-    Top = 40
+    Top = 30
     Width = 754
-    Height = 592
+    Height = 602
     Align = alClient
     Picture.Data = {
       0954506E67496D61676589504E470D0A1A0A0000000D49484452000003CE0000
@@ -6326,7 +6327,7 @@ object frmMain: TfrmMain
       63A6FFA4ED921E97D4DB5B3EF6916F6C1BFF35599CBE0138692FA2A062B7CD00
       00000049454E44AE426082}
     ExplicitLeft = 202
-    ExplicitTop = 43
+    ExplicitTop = 33
   end
   object logo: TImage
     AlignWithMargins = True
@@ -6450,13 +6451,13 @@ object frmMain: TfrmMain
     Left = 0
     Top = 0
     Width = 954
-    Height = 40
+    Height = 30
     Align = alTop
     BevelOuter = bvNone
     Caption = 'pnlTop'
     Color = 6316128
-    Constraints.MaxHeight = 40
-    Constraints.MinHeight = 40
+    Constraints.MaxHeight = 30
+    Constraints.MinHeight = 30
     ParentBackground = False
     ShowCaption = False
     TabOrder = 0
@@ -6465,7 +6466,7 @@ object frmMain: TfrmMain
       Left = 927
       Top = 3
       Width = 24
-      Height = 34
+      Height = 24
       Align = alRight
       AutoSize = True
       Center = True
@@ -6486,14 +6487,13 @@ object frmMain: TfrmMain
       OnClick = btnCloseClick
       ExplicitLeft = 926
       ExplicitTop = 4
-      ExplicitHeight = 24
     end
     object lblTitle: TLabel
       AlignWithMargins = True
       Left = 33
       Top = 3
       Width = 888
-      Height = 34
+      Height = 24
       Align = alClient
       Alignment = taCenter
       Caption = 'Project Item Stock'
@@ -6507,7 +6507,6 @@ object frmMain: TfrmMain
       ParentFont = False
       Layout = tlCenter
       OnMouseDown = lblTitleMouseDown
-      ExplicitLeft = 3
       ExplicitWidth = 98
       ExplicitHeight = 15
     end
@@ -6516,7 +6515,7 @@ object frmMain: TfrmMain
       Left = 3
       Top = 3
       Width = 24
-      Height = 34
+      Height = 24
       Align = alLeft
       AutoSize = True
       Center = True
@@ -6533,6 +6532,7 @@ object frmMain: TfrmMain
         AA0000000049454E44AE426082}
       OnClick = Image2Click
       ExplicitTop = 0
+      ExplicitHeight = 34
     end
   end
   object pnlBottom: TPanel
@@ -6548,23 +6548,22 @@ object frmMain: TfrmMain
   end
   object spMenu: TSplitView
     Left = 0
-    Top = 40
+    Top = 30
     Width = 200
-    Height = 592
+    Height = 602
     OpenedWidth = 200
     Placement = svpLeft
     TabOrder = 2
-    ExplicitLeft = 480
-    ExplicitTop = 368
-    ExplicitHeight = 41
+    ExplicitTop = 40
+    ExplicitHeight = 592
     object pnlMenu: TPanel
       Left = 0
       Top = 0
       Width = 200
-      Height = 592
+      Height = 602
       Align = alClient
       TabOrder = 0
-      ExplicitTop = 3
+      ExplicitHeight = 592
       object Image3: TImage
         AlignWithMargins = True
         Left = 4
@@ -6696,7 +6695,6 @@ object frmMain: TfrmMain
         OnClick = pnlSettingsClick
         OnMouseEnter = pnlSettingsMouseEnter
         OnMouseLeave = pnlSettingsMouseLeave
-        ExplicitLeft = 11
         object Image5: TImage
           AlignWithMargins = True
           Left = 4
@@ -6750,7 +6748,6 @@ object frmMain: TfrmMain
         OnClick = pnlStockClick
         OnMouseEnter = pnlStockMouseEnter
         OnMouseLeave = pnlStockMouseLeave
-        ExplicitLeft = 11
         object Image4: TImage
           AlignWithMargins = True
           Left = 4

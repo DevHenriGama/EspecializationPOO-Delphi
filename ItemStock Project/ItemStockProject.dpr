@@ -11,7 +11,9 @@ uses
   uItemStock.Dao.Interfaces in 'dao\uItemStock.Dao.Interfaces.pas',
   uItemStock.Model.ClassItem in 'model\uItemStock.Model.ClassItem.pas',
   uItemStock.Model.ClassTypeItens in 'model\uItemStock.Model.ClassTypeItens.pas',
-  uItemStock.Model.Interfaces in 'model\uItemStock.Model.Interfaces.pas';
+  uItemStock.Model.Interfaces in 'model\uItemStock.Model.Interfaces.pas',
+  uItemStock.View.ItemStock in 'view\uItemStock.View.ItemStock.pas' {frmItemStock},
+  uItemStock.Controller.PersistentData in 'controller\uItemStock.Controller.PersistentData.pas';
 
 {$R *.res}
 
@@ -19,6 +21,5 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TfrmMain, frmMain);
-  Application.CreateForm(TdmDados, dmDados);
   Application.Run;
 end.
