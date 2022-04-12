@@ -1,0 +1,54 @@
+unit uItemStock.View.ItemStock;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.Grids, Vcl.DBGrids,
+  uItemStock.Controller.PersistentData,
+  uItemStock.Controller.Interfaces, Vcl.Imaging.pngimage, Vcl.ExtCtrls;
+
+type
+  TfrmItemStock = class(TForm)
+    DBGrid1: TDBGrid;
+    DataPersistent: TDataSource;
+    Panel1: TPanel;
+    imgClose: TImage;
+    procedure FormCreate(Sender: TObject);
+    procedure imgCloseClick(Sender: TObject);
+    procedure Panel1MouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+  private
+    { Private declarations }
+    PersistentData : IPersistentData;
+  public
+    { Public declarations }
+  end;
+
+var
+  frmItemStock: TfrmItemStock;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmItemStock.FormCreate(Sender: TObject);
+begin
+ PersistentData := TPersistentDataControll.Create;
+ DataPersistent.DataSet := PersistentData.GetDataPersistent;
+end;
+
+procedure TfrmItemStock.imgCloseClick(Sender: TObject);
+begin
+Self.Close;
+end;
+
+procedure TfrmItemStock.Panel1MouseDown(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Integer);
+  const SG = $F012;
+begin
+ ReleaseCapture;
+ Perform(WM_SYSCOMMAND,SG,0);
+end;
+
+end.

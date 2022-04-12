@@ -24,6 +24,7 @@ type
     spindicator: TShape;
     Image4: TImage;
     Image5: TImage;
+    lblDateTime: TLabel;
     procedure btnCloseClick(Sender: TObject);
     procedure Image2Click(Sender: TObject);
     procedure pnlStockMouseEnter(Sender: TObject);
@@ -36,8 +37,11 @@ type
     procedure lblTitleMouseDown(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Integer);
     procedure FormCreate(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
+    Clock : TTimer;
+    procedure ShowDateAndTime(Sender : TObject);
     procedure ButtonFx(out Button : TPanel);
     procedure SetIndicator(out Button : TPanel);
 
@@ -67,14 +71,21 @@ begin
   end;
 end;
 
+procedure TfrmMain.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+Clock.Free;
+end;
+
 procedure TfrmMain.FormCreate(Sender: TObject);
 begin
 ReportMemoryLeaksOnShutdown := True;
+Clock := TTimer.Create(nil);
 end;
 
 procedure TfrmMain.FormShow(Sender: TObject);
 begin
 SetIndicator(pnlStock);
+Clock.OnTimer := ShowDateAndTime;
 end;
 
 procedure TfrmMain.Image2Click(Sender: TObject);
@@ -130,6 +141,13 @@ procedure TfrmMain.SetIndicator(out Button: TPanel);
 begin
  spindicator.Top := Button.Top;
  spindicator.Left := 0;
+end;
+
+procedure TfrmMain.ShowDateAndTime(Sender: TObject);
+begin
+ lblDateTime.Caption :=
+    FormatDateTime('hh:mm',Time) +
+        #13#10 + FormatDateTime('dd/mm/yyyy',Date);
 end;
 
 end.

@@ -27,7 +27,7 @@ uses uItemStock.Controller.Interfaces, uItemStock.Model.Interfaces,
           function Description(Des_Item : String) : IControllerItem;
           function PicturePath( Path : String) : IControllerItem;
           function Container( NumContainer : Integer) : IControllerItem;
-          function TypeItenm(_TypeItem  : String) : IControllerItem;
+          function TypeItem(_TypeItem  : String) : IControllerItem;
           procedure Add;
           procedure Edit;
           procedure Remove;
@@ -129,7 +129,7 @@ Result := Self;
 FState := ItemState;
 end;
 
-function TControllerItem.TypeItenm(_TypeItem: String): IControllerItem;
+function TControllerItem.TypeItem(_TypeItem: String): IControllerItem;
 begin
  Result := Self;
  FTypeItem := _TypeItem;

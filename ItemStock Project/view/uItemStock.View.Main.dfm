@@ -12,6 +12,7 @@ object frmMain: TfrmMain
   Font.Name = 'Segoe UI'
   Font.Style = []
   Position = poScreenCenter
+  OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow
   PixelsPerInch = 96
@@ -6447,6 +6448,20 @@ object frmMain: TfrmMain
       49454E44AE426082}
     Stretch = True
   end
+  object lblDateTime: TLabel
+    Left = 792
+    Top = 56
+    Width = 99
+    Height = 32
+    Caption = 'Welcome'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Height = -24
+    Font.Name = 'Segoe UI Semibold'
+    Font.Style = [fsBold, fsItalic]
+    ParentFont = False
+    WordWrap = True
+  end
   object pnlTop: TPanel
     Left = 0
     Top = 0
@@ -6554,8 +6569,6 @@ object frmMain: TfrmMain
     OpenedWidth = 200
     Placement = svpLeft
     TabOrder = 2
-    ExplicitTop = 40
-    ExplicitHeight = 592
     object pnlMenu: TPanel
       Left = 0
       Top = 0
@@ -6563,7 +6576,6 @@ object frmMain: TfrmMain
       Height = 602
       Align = alClient
       TabOrder = 0
-      ExplicitHeight = 592
       object Image3: TImage
         AlignWithMargins = True
         Left = 4

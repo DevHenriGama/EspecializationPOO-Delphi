@@ -22,7 +22,7 @@ uses
       function Description(Des_Item : String) : IControllerItem;
       function PicturePath( Path : String) : IControllerItem;
       function Container( NumContainer : Integer) : IControllerItem;
-      function TypeItenm(_TypeItem  : String) : IControllerItem;
+      function TypeItem(_TypeItem  : String) : IControllerItem;
       procedure Add;
       procedure Edit;
       procedure Remove;
