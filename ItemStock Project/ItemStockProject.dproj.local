@@ -24,13 +24,14 @@
     <Transaction>2022/03/20 10:10:19.000.664,=F:\Progamação\Projects\Delphi\Estudos\EspecializationPOO-Delphi\ItemStock Project\model\uItemStock.Model.ClassItem.pas</Transaction>
     <Transaction>2022/03/20 10:10:19.000.760,=F:\Progamação\Projects\Delphi\Estudos\EspecializationPOO-Delphi\ItemStock Project\model\uItemStock.Model.Interfaces.pas</Transaction>
     <Transaction>2022/03/20 10:12:07.000.890,F:\Progamação\Projects\Delphi\Estudos\EspecializationPOO-Delphi\ItemStock Project\model\uItemStock.Model.ClassStock.pas=</Transaction>
-    <Transaction>2022/04/01 11:25:55.759,=F:\Progamação\Projects\Delphi\Estudos\EspecializationPOO-Delphi\ItemStock Project\Unit1.pas</Transaction>
-    <Transaction>2022/04/01 11:26:53.634,F:\Progamação\Projects\Delphi\Estudos\EspecializationPOO-Delphi\ItemStock Project\view\uItemStock.View.ItemStock.pas=F:\Progamação\Projects\Delphi\Estudos\EspecializationPOO-Delphi\ItemStock Project\Unit1.pas</Transaction>
-    <Transaction>2022/04/01 11:26:53.634,F:\Progamação\Projects\Delphi\Estudos\EspecializationPOO-Delphi\ItemStock Project\view\uItemStock.View.ItemStock.dfm=F:\Progamação\Projects\Delphi\Estudos\EspecializationPOO-Delphi\ItemStock Project\Unit1.dfm</Transaction>
-    <Transaction>2022/04/01 11:34:58.956,=F:\Progamação\Projects\Delphi\Estudos\EspecializationPOO-Delphi\ItemStock Project\Unit1.pas</Transaction>
-    <Transaction>2022/04/01 11:36:02.837,F:\Progamação\Projects\Delphi\Estudos\EspecializationPOO-Delphi\ItemStock Project\controller\uItemStock.Controller.PersistentData.pas=F:\Progamação\Projects\Delphi\Estudos\EspecializationPOO-Delphi\ItemStock Project\Unit1.pas</Transaction>
-    <Transaction>2022/04/01 11:36:08.233,=F:\Progamação\Projects\Delphi\Estudos\EspecializationPOO-Delphi\ItemStock Project\Unit1.pas</Transaction>
-  </Transactions>  <ProjectSortOrder AutoSort="0" SortType="0">
+    <Transaction>2022/04/01 11:25:55.000.759,=F:\Progamação\Projects\Delphi\Estudos\EspecializationPOO-Delphi\ItemStock Project\Unit1.pas</Transaction>
+    <Transaction>2022/04/01 11:26:53.000.634,F:\Progamação\Projects\Delphi\Estudos\EspecializationPOO-Delphi\ItemStock Project\view\uItemStock.View.ItemStock.pas=F:\Progamação\Projects\Delphi\Estudos\EspecializationPOO-Delphi\ItemStock Project\Unit1.pas</Transaction>
+    <Transaction>2022/04/01 11:26:53.000.634,F:\Progamação\Projects\Delphi\Estudos\EspecializationPOO-Delphi\ItemStock Project\view\uItemStock.View.ItemStock.dfm=F:\Progamação\Projects\Delphi\Estudos\EspecializationPOO-Delphi\ItemStock Project\Unit1.dfm</Transaction>
+    <Transaction>2022/04/01 11:34:58.000.956,=F:\Progamação\Projects\Delphi\Estudos\EspecializationPOO-Delphi\ItemStock Project\Unit1.pas</Transaction>
+    <Transaction>2022/04/01 11:36:02.000.837,F:\Progamação\Projects\Delphi\Estudos\EspecializationPOO-Delphi\ItemStock Project\controller\uItemStock.Controller.PersistentData.pas=F:\Progamação\Projects\Delphi\Estudos\EspecializationPOO-Delphi\ItemStock Project\Unit1.pas</Transaction>
+    <Transaction>2022/04/01 11:36:08.000.233,=F:\Progamação\Projects\Delphi\Estudos\EspecializationPOO-Delphi\ItemStock Project\Unit1.pas</Transaction>
+  </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
     <File Path="controller"/>
     <File Path="controller\uItemStock.Controller.Classitem.pas"/>
     <File Path="controller\uItemStock.Controller.ClassStock.pas"/>

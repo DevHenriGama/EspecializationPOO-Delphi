@@ -11,6 +11,7 @@ uses
      procedure InsertItem( Connection : TFDConnection );
      procedure UpdateItem(MyConnection : TFDConnection);
      procedure DeleteItem(MyConnection : TFDConnection);
+     procedure  SerchInDatabase(_Value , SB_By : String; Conn :TFDConnection );
   end;
 
   iConnection = interface

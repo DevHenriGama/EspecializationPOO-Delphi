@@ -31,6 +31,7 @@ uses uItemStock.Controller.Interfaces, uItemStock.Model.Interfaces,
           procedure Add;
           procedure Edit;
           procedure Remove;
+          procedure Search(_Value ,SB_BY : String);
     end;
 
 implementation
@@ -121,6 +122,11 @@ begin
    Delete;
  end;
 
+end;
+
+procedure TControllerItem.Search(_Value, SB_BY: String);
+begin
+FStockItem.Search(_Value,SB_BY);
 end;
 
 function TControllerItem.State(ItemState: String): IControllerItem;

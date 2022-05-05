@@ -26,6 +26,7 @@ uses
       procedure Add;
       procedure Edit;
       procedure Remove;
+      procedure Search(_Value ,SB_BY : String);
     end;
 
     IPersistentData = interface

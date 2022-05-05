@@ -37,6 +37,7 @@ uses
         procedure Insert;
         procedure Delete;
         procedure Update;
+        procedure Search(_Value ,SB_BY : String);
     end;
 
 implementation
@@ -67,6 +68,13 @@ begin
  TDaoIntructions.NewInstruction(Self).InsertItem(FConnection.Connection);
 end;
 
+
+procedure TItem.Search(_Value, SB_BY: String);
+begin
+  TDaoIntructions
+  .NewInstruction(Self)
+  .SerchInDatabase(_Value,SB_BY,FConnection.Connection);
+end;
 
 procedure TItem.SetContainer(const Value: Integer);
 begin

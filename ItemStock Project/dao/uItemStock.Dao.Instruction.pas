@@ -18,9 +18,13 @@ type
      procedure InsertItem( Myconnection : TFDConnection );
      procedure UpdateItem(MyConnection : TFDConnection);
      procedure DeleteItem(MyConnection : TFDConnection);
+     procedure  SerchInDatabase(_Value , SB_By : String; Conn :TFDConnection );
    end;
 
 implementation
+
+uses
+  System.SysUtils;
 
 
 
@@ -74,6 +78,21 @@ class function TDaoIntructions.NewInstruction(
   MyClassItem: TItem): IDaoInstruction;
 begin
   Result := TDaoIntructions.Create(MyClassItem);
+end;
+
+
+procedure TDaoIntructions.SerchInDatabase(_Value, SB_By: String;
+  Conn: TFDConnection);
+begin
+ with FQuery do begin
+
+   Connection := Conn;
+   Close;
+   SQL.Clear;
+   SQL.Add('SELECT * FROM ITENS WHERE ' + SB_By + ' LIKE  '+ QuotedStr('%'+_Value+'%'));
+   Open;
+   Refresh;
+ end;
 end;
 
 procedure TDaoIntructions.UpdateItem(MyConnection: TFDConnection);
