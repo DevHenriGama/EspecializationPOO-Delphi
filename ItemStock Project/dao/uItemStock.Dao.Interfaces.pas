@@ -12,6 +12,7 @@ uses
      procedure UpdateItem(MyConnection : TFDConnection);
      procedure DeleteItem(MyConnection : TFDConnection);
      procedure  SerchInDatabase(_Value , SB_By : String; Conn :TFDConnection );
+     function PersitentData(MyConnection : TFDConnection) : TFDQuery;
   end;
 
   iConnection = interface

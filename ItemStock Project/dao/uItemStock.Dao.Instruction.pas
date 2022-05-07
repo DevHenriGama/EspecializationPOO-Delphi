@@ -19,6 +19,7 @@ type
      procedure UpdateItem(MyConnection : TFDConnection);
      procedure DeleteItem(MyConnection : TFDConnection);
      procedure  SerchInDatabase(_Value , SB_By : String; Conn :TFDConnection );
+     function PersitentData(MyConnection : TFDConnection) : TFDQuery;
    end;
 
 implementation
@@ -80,6 +81,20 @@ begin
   Result := TDaoIntructions.Create(MyClassItem);
 end;
 
+
+function TDaoIntructions.PersitentData(MyConnection : TFDConnection): TFDQuery;
+begin
+ if FQuery.SQL.Text = '' then begin
+  with FQuery do begin
+   Connection := MyConnection;
+    Close;
+    SQL.Clear;
+    SQL.Add('SELECT * FROM ITENS');
+    Open;
+  end;
+ end;
+ Result := FQuery;
+end;
 
 procedure TDaoIntructions.SerchInDatabase(_Value, SB_By: String;
   Conn: TFDConnection);

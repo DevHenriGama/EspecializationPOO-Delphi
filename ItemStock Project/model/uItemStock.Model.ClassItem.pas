@@ -4,7 +4,7 @@ interface
 
 uses
   uItemStock.Model.Interfaces, uItemStock.Dao.Interfaces,
-  uItemStock.Dao.DataModule;
+  uItemStock.Dao.DataModule, FireDAC.Comp.Client;
 
   type
     TItem = class
@@ -38,6 +38,7 @@ uses
         procedure Delete;
         procedure Update;
         procedure Search(_Value ,SB_BY : String);
+        function GetData : TFDQuery;
     end;
 
 implementation
@@ -61,6 +62,11 @@ destructor TItem.Destroy;
 begin
    FConnection.Free;
   inherited;
+end;
+
+function TItem.GetData: TFDQuery;
+begin
+Result := TDaoIntructions.NewInstruction(Self).PersitentData(FConnection.Connection);
 end;
 
 procedure TItem.Insert;

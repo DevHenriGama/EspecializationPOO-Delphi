@@ -27,12 +27,9 @@ uses
       procedure Edit;
       procedure Remove;
       procedure Search(_Value ,SB_BY : String);
+      function GetData : TFDQuery;
     end;
 
-    IPersistentData = interface
-      ['{82E949DC-7598-4AFA-A3BC-2F655DD61B1C}']
-      function GetDataPersistent : TFDQuery;
-    end;
 
 implementation
 

@@ -3,7 +3,7 @@ unit uItemStock.Controller.Classitem;
 interface
 
 uses uItemStock.Controller.Interfaces, uItemStock.Model.Interfaces,
-   uItemStock.Model.ClassItem;
+   uItemStock.Model.ClassItem, FireDAC.Comp.Client;
 
   type
     TControllerItem = class(TInterfacedObject, IControllerItem)
@@ -32,6 +32,7 @@ uses uItemStock.Controller.Interfaces, uItemStock.Model.Interfaces,
           procedure Edit;
           procedure Remove;
           procedure Search(_Value ,SB_BY : String);
+          function GetData : TFDQuery;
     end;
 
 implementation
@@ -72,6 +73,11 @@ begin
    Container := FContainer;
    Update;
  end;
+end;
+
+function TControllerItem.GetData: TFDQuery;
+begin
+Result := FStockItem.GetData;
 end;
 
 function TControllerItem.ID(IDvalue: Integer): IControllerItem;

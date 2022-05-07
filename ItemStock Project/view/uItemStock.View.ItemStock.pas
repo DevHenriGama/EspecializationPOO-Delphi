@@ -5,7 +5,6 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.Grids, Vcl.DBGrids,
-  uItemStock.Controller.PersistentData,
   uItemStock.Controller.Interfaces, Vcl.Imaging.pngimage, Vcl.ExtCtrls,
   Vcl.StdCtrls, Vcl.WinXCtrls, Vcl.Menus, System.ImageList, Vcl.ImgList;
 
@@ -40,7 +39,6 @@ type
     btnCancel: TButton;
     btnEdit: TButton;
     btnDelete: TButton;
-    procedure FormCreate(Sender: TObject);
     procedure imgCloseClick(Sender: TObject);
     procedure Panel1MouseDown(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Integer);
@@ -56,10 +54,10 @@ type
     procedure ipo1Click(Sender: TObject);
     procedure Estado1Click(Sender: TObject);
     procedure sbItemKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
     CrudState : Integer;
-    PersistentData : IPersistentData;
     TypeSearch  : String;
     procedure FieldControlls(State : Boolean);
     procedure ClerFields;
@@ -150,6 +148,7 @@ begin
               TypeItem(edtType.Text).
                 Remove;
   end;
+  DataPersistent.DataSet.Refresh;
 end;
 
 procedure TfrmItemStock.dbDataCellClick(Column: TColumn);
@@ -186,13 +185,13 @@ end;
 
 procedure TfrmItemStock.FormCreate(Sender: TObject);
 begin
- PersistentData := TPersistentDataControll.Create;
- DataPersistent.DataSet := PersistentData.GetDataPersistent;
+  DataPersistent.DataSet := TControllerItem.New.GetData;
 end;
 
 procedure TfrmItemStock.FormShow(Sender: TObject);
 begin
  FieldControlls(False);
+
 end;
 
 procedure TfrmItemStock.Image2Click(Sender: TObject);
