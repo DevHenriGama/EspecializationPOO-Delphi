@@ -29,12 +29,11 @@ object frmItemStock: TfrmItemStock
     Constraints.MinHeight = 20
     ParentBackground = False
     TabOrder = 2
-    ExplicitWidth = 1014
   end
   object dbData: TDBGrid
-    Left = 200
+    Left = 0
     Top = 31
-    Width = 827
+    Width = 1027
     Height = 560
     Align = alClient
     DataSource = DataPersistent
@@ -149,7 +148,6 @@ object frmItemStock: TfrmItemStock
     ParentFont = False
     TabOrder = 1
     OnMouseDown = Panel1MouseDown
-    ExplicitWidth = 1014
     object imgClose: TImage
       AlignWithMargins = True
       Left = 1000
@@ -226,8 +224,9 @@ object frmItemStock: TfrmItemStock
   object spMenu: TSplitView
     Left = 0
     Top = 31
-    Width = 200
+    Width = 0
     Height = 560
+    Opened = False
     OpenedWidth = 200
     Placement = svpLeft
     TabOrder = 3
