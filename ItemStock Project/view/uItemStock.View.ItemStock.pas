@@ -6,7 +6,8 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.Grids, Vcl.DBGrids,
   uItemStock.Controller.Interfaces, Vcl.Imaging.pngimage, Vcl.ExtCtrls,
-  Vcl.StdCtrls, Vcl.WinXCtrls, Vcl.Menus, System.ImageList, Vcl.ImgList;
+  Vcl.StdCtrls, Vcl.WinXCtrls, Vcl.Menus, System.ImageList, Vcl.ImgList,
+  uItemStock.Controller.ControllViewData;
 
 type
   TfrmItemStock = class(TForm)
@@ -55,14 +56,17 @@ type
     procedure Estado1Click(Sender: TObject);
     procedure sbItemKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure FormCreate(Sender: TObject);
+    procedure sbItemChange(Sender: TObject);
   private
     { Private declarations }
     CrudState : Integer;
     TypeSearch  : String;
+    ViewData : IViewData;
     procedure FieldControlls(State : Boolean);
     procedure ClerFields;
     procedure CrudExecute;
     procedure ListFields;
+    procedure FlexGridTitles;
   public
     { Public declarations }
   end;
@@ -122,31 +126,30 @@ procedure TfrmItemStock.CrudExecute;
 begin
    case CrudState of
   1:TControllerItem.New.
-    ID(StrToInt(edtID.Text)).
       Item(edtItemName.Text).
-        State(edtState.Text).
-          Description(edtDescription.Text).
-            Container(StrToInt(edtContainer.Text)).
-              TypeItem(edtType.Text).
-                Add;
+      State(edtState.Text).
+      Description(edtDescription.Text).
+      Container(StrToInt(edtContainer.Text)).
+      TypeItem(edtType.Text).
+      Add;
 
   2:TControllerItem.New.
     ID(StrToInt(edtID.Text)).
-      Item(edtItemName.Text).
-        State(edtState.Text).
-          Description(edtDescription.Text).
-            Container(StrToInt(edtContainer.Text)).
-              TypeItem(edtType.Text).
-                Edit;
+    Item(edtItemName.Text).
+    State(edtState.Text).
+    Description(edtDescription.Text).
+    Container(StrToInt(edtContainer.Text)).
+    TypeItem(edtType.Text).
+    Edit;
 
   3:TControllerItem.New.
     ID(StrToInt(edtID.Text)).
-      Item(edtItemName.Text).
-        State(edtState.Text).
-          Description(edtDescription.Text).
-            Container(StrToInt(edtContainer.Text)).
-              TypeItem(edtType.Text).
-                Remove;
+    Item(edtItemName.Text).
+    State(edtState.Text).
+    Description(edtDescription.Text).
+    Container(StrToInt(edtContainer.Text)).
+    TypeItem(edtType.Text).
+    Remove;
   end;
   DataPersistent.DataSet.Refresh;
 end;
@@ -183,20 +186,42 @@ begin
  end;
 end;
 
+procedure TfrmItemStock.FlexGridTitles;
+function MenuWithToInteger : Integer;
+begin
+  if spMenu.Opened then
+   Result := spMenu.Width
+  else
+    Result := 0;
+end;
+
+var  Index, TitleWith  : Integer;
+begin
+  TitleWith := (Self.Width -  MenuWithToInteger) div 6;
+
+  for Index := 0 to 5 do begin
+    dbData.Columns[Index].Width :=  TitleWith;
+  end;
+
+end;
+
 procedure TfrmItemStock.FormCreate(Sender: TObject);
 begin
-  DataPersistent.DataSet := TControllerItem.New.GetData;
+ViewData := TControllViewData.Create;
 end;
 
 procedure TfrmItemStock.FormShow(Sender: TObject);
 begin
+ DataPersistent.DataSet := ViewData.GetDataSet;
  FieldControlls(False);
+ FlexGridTitles;
 
 end;
 
 procedure TfrmItemStock.Image2Click(Sender: TObject);
 begin
  spMenu.Opened := not spMenu.Opened;
+ FlexGridTitles;
 end;
 
 procedure TfrmItemStock.imgCloseClick(Sender: TObject);
@@ -232,11 +257,17 @@ begin
  Perform(WM_SYSCOMMAND,SG,0);
 end;
 
+procedure TfrmItemStock.sbItemChange(Sender: TObject);
+begin
+ if sbItem.Text = '' then
+  ViewData.ListAll;
+end;
+
 procedure TfrmItemStock.sbItemKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
  if Key = 13 then begin
-  TControllerItem.New.Search(sbItem.Text,TypeSearch);
+  ViewData.SearchToTName(sbItem.Text,TypeSearch );
   DataPersistent.DataSet.Refresh;
  end;
 end;

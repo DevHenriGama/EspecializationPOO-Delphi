@@ -3,7 +3,7 @@ unit uItemStock.Controller.Interfaces;
 interface
 
 uses
-  uItemStock.Model.Interfaces, FireDAC.Comp.Client;
+  FireDAC.Comp.Client;
 
   type
     IControllerItem = Interface;
@@ -11,7 +11,6 @@ uses
     IControllerStock = interface
     ['{70F6AB0F-CB46-4D13-8D6E-8CBBB65CD156}']
       function StockItem : IControllerItem;
-      function MyType : ITypeItens;
     end;
 
     IControllerItem = interface
@@ -26,10 +25,15 @@ uses
       procedure Add;
       procedure Edit;
       procedure Remove;
-      procedure Search(_Value ,SB_BY : String);
-      function GetData : TFDQuery;
     end;
 
+    IViewData = interface
+      ['{4435EDC4-6D4A-4FAB-AE98-AFCC91D793FA}']
+      function GetDataSet : TFDQuery;
+      procedure SerchToIndex(_Value :String;_Index : Integer);
+      procedure SearchToTName(_Value, TableName : String);
+      procedure ListAll;
+    end;
 
 implementation
 

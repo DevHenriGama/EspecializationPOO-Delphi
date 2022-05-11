@@ -3,7 +3,7 @@ unit uItemStock.Model.ClassItem;
 interface
 
 uses
-  uItemStock.Model.Interfaces, uItemStock.Dao.Interfaces,
+   uItemStock.Dao.Interfaces,
   uItemStock.Dao.DataModule, FireDAC.Comp.Client;
 
   type
@@ -16,7 +16,6 @@ uses
         FID: Integer;
         FDescription: String;
         FItem: String;
-        FConnection : TdmDados;
         procedure SetContainer(const Value: Integer);
         procedure SetDescription(const Value: String);
         procedure SetID(const Value: Integer);
@@ -37,8 +36,6 @@ uses
         procedure Insert;
         procedure Delete;
         procedure Update;
-        procedure Search(_Value ,SB_BY : String);
-        function GetData : TFDQuery;
     end;
 
 implementation
@@ -50,36 +47,25 @@ uses
 
 constructor TItem.Create;
 begin
-   FConnection := TdmDados.Create(nil);
+
 end;
 
 procedure TItem.Delete;
 begin
-TDaoIntructions.NewInstruction(Self).DeleteItem(FConnection.Connection);
+TDaoIntructions.NewInstruction(Self).DeleteItem;
 end;
 
 destructor TItem.Destroy;
 begin
-   FConnection.Free;
+
   inherited;
 end;
 
-function TItem.GetData: TFDQuery;
-begin
-Result := TDaoIntructions.NewInstruction(Self).PersitentData(FConnection.Connection);
-end;
+
 
 procedure TItem.Insert;
 begin
- TDaoIntructions.NewInstruction(Self).InsertItem(FConnection.Connection);
-end;
-
-
-procedure TItem.Search(_Value, SB_BY: String);
-begin
-  TDaoIntructions
-  .NewInstruction(Self)
-  .SerchInDatabase(_Value,SB_BY,FConnection.Connection);
+ TDaoIntructions.NewInstruction(Self).InsertItem;
 end;
 
 procedure TItem.SetContainer(const Value: Integer);
@@ -126,7 +112,7 @@ end;
 
 procedure TItem.Update;
 begin
-  TDaoIntructions.NewInstruction(Self).UpdateItem(FConnection.Connection);
+  TDaoIntructions.NewInstruction(Self).UpdateItem;
 end;
 
 end.

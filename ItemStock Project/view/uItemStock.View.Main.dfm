@@ -6704,6 +6704,7 @@ object frmMain: TfrmMain
         Align = alTop
         Caption = 'Configura'#231#245'es'
         TabOrder = 0
+        Visible = False
         OnClick = pnlSettingsClick
         OnMouseEnter = pnlSettingsMouseEnter
         OnMouseLeave = pnlSettingsMouseLeave

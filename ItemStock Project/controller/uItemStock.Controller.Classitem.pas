@@ -2,7 +2,7 @@ unit uItemStock.Controller.Classitem;
 
 interface
 
-uses uItemStock.Controller.Interfaces, uItemStock.Model.Interfaces,
+uses uItemStock.Controller.Interfaces,
    uItemStock.Model.ClassItem, FireDAC.Comp.Client;
 
   type
@@ -31,8 +31,6 @@ uses uItemStock.Controller.Interfaces, uItemStock.Model.Interfaces,
           procedure Add;
           procedure Edit;
           procedure Remove;
-          procedure Search(_Value ,SB_BY : String);
-          function GetData : TFDQuery;
     end;
 
 implementation
@@ -67,6 +65,7 @@ begin
  with FStockItem do begin
    ID := FID;
    Item := FItem;
+   TypeItem := FTypeItem;
    Description := FDescription;
    PicturePath := FPicturePath;
    State := FState;
@@ -75,10 +74,6 @@ begin
  end;
 end;
 
-function TControllerItem.GetData: TFDQuery;
-begin
-Result := FStockItem.GetData;
-end;
 
 function TControllerItem.ID(IDvalue: Integer): IControllerItem;
 begin
@@ -93,6 +88,7 @@ begin
    Item := FItem;
    Description := FDescription;
    PicturePath := FPicturePath;
+   TypeItem := FTypeItem;
    State := FState;
    Container := FContainer;
    Insert;
@@ -125,15 +121,12 @@ begin
    PicturePath := FPicturePath;
    State := FState;
    Container := FContainer;
+   TypeItem := FTypeItem;
    Delete;
  end;
 
 end;
 
-procedure TControllerItem.Search(_Value, SB_BY: String);
-begin
-FStockItem.Search(_Value,SB_BY);
-end;
 
 function TControllerItem.State(ItemState: String): IControllerItem;
 begin

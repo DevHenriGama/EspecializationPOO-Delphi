@@ -3,7 +3,8 @@ unit uItemStock.Dao.Instruction;
 interface
 
 uses
-  uItemStock.Model.ClassItem, uItemStock.Dao.Interfaces,FireDAC.Comp.Client;
+  uItemStock.Model.ClassItem, uItemStock.Dao.Interfaces,FireDAC.Comp.Client,
+  uItemStock.Dao.DataModule;
 
 type
    TDaoIntructions = class(TInterfacedObject,IDaoInstruction)
@@ -11,15 +12,19 @@ type
    private
       FItens : TItem;
       FQuery : TFDQuery;
+      MyConnection : TFDConnection;
+      _data : TdmDados;
    public
-     constructor Create(MyIten  :TItem);
+      constructor Create;overload;
+     constructor Create(MyIten  :TItem);overload;
      destructor Destroy; override;
      class function NewInstruction( MyClassItem : TItem) : IDaoInstruction;
-     procedure InsertItem( Myconnection : TFDConnection );
-     procedure UpdateItem(MyConnection : TFDConnection);
-     procedure DeleteItem(MyConnection : TFDConnection);
-     procedure  SerchInDatabase(_Value , SB_By : String; Conn :TFDConnection );
-     function PersitentData(MyConnection : TFDConnection) : TFDQuery;
+     procedure InsertItem;
+     procedure UpdateItem;
+     procedure DeleteItem;
+     procedure  SerchInDatabase(_Value , SB_By : String);
+     procedure ListAll;
+     function PersitentData : TFDQuery;
    end;
 
 implementation
@@ -33,14 +38,24 @@ uses
 
 constructor TDaoIntructions.Create(MyIten  :TItem);
 begin
-  FItens := MyIten;
-  FQuery := TFDQuery.Create(nil);
+     FItens := MyIten;
+    FQuery := TFDQuery.Create(nil);
+    _data := TdmDados.Create(nil);
+     MyConnection := _data.Connection;
+     FQuery.Connection := MyConnection;
 end;
 
-procedure TDaoIntructions.DeleteItem(MyConnection: TFDConnection);
+constructor TDaoIntructions.Create;
+begin
+      FQuery := TFDQuery.Create(nil);
+    _data := TdmDados.Create(nil);
+     MyConnection := _data.Connection;
+     FQuery.Connection := MyConnection;
+end;
+
+procedure TDaoIntructions.DeleteItem;
 begin
   with FQuery do begin
-    Connection := Myconnection;
     Close;
     SQL.Clear;
     SQL.Add('DELETE FROM ITENS WHERE ID = :id');
@@ -51,14 +66,15 @@ end;
 
 destructor TDaoIntructions.Destroy;
 begin
+    MyConnection.Free;
    FQuery.Free;
+   _data.Free;
   inherited;
 end;
 
-procedure TDaoIntructions.InsertItem(Myconnection: TFDConnection);
+procedure TDaoIntructions.InsertItem;
 begin
   with FQuery do begin
-    Connection := Myconnection;
     Close;
     SQL.Clear;
     SQL.Add('INSERT INTO ITENS (ITEMNAME, STATE, DESCRIPTION, TYPES, CONTAINER, PATH) ' +
@@ -75,6 +91,16 @@ begin
   end;
 end;
 
+procedure TDaoIntructions.ListAll;
+begin
+ with FQuery do begin
+   Close;
+   SQL.Clear;
+   SQL.Add('SELECT * FROM ITENS');
+   Open;
+ end;
+end;
+
 class function TDaoIntructions.NewInstruction(
   MyClassItem: TItem): IDaoInstruction;
 begin
@@ -82,11 +108,10 @@ begin
 end;
 
 
-function TDaoIntructions.PersitentData(MyConnection : TFDConnection): TFDQuery;
+function TDaoIntructions.PersitentData: TFDQuery;
 begin
  if FQuery.SQL.Text = '' then begin
   with FQuery do begin
-   Connection := MyConnection;
     Close;
     SQL.Clear;
     SQL.Add('SELECT * FROM ITENS');
@@ -96,24 +121,26 @@ begin
  Result := FQuery;
 end;
 
-procedure TDaoIntructions.SerchInDatabase(_Value, SB_By: String;
-  Conn: TFDConnection);
+procedure TDaoIntructions.SerchInDatabase(_Value, SB_By: String);
+var FType : String;
 begin
- with FQuery do begin
+ FType := SB_By;
 
-   Connection := Conn;
+ if SB_By = '' then begin
+    FType := 'ITEMNAME';
+ end;
+
+ with FQuery do begin
    Close;
    SQL.Clear;
-   SQL.Add('SELECT * FROM ITENS WHERE ' + SB_By + ' LIKE  '+ QuotedStr('%'+_Value+'%'));
+   SQL.Add('SELECT * FROM ITENS WHERE ' + FType + ' LIKE  '+ QuotedStr('%' + _Value + '%'));
    Open;
-   Refresh;
  end;
 end;
 
-procedure TDaoIntructions.UpdateItem(MyConnection: TFDConnection);
+procedure TDaoIntructions.UpdateItem;
 begin
   with FQuery do begin
-    Connection := Myconnection;
     Close;
     SQL.Clear;
     SQL.Add('UPDATE ITENS  SET ITEMNAME = :name, STATE = :state, ' +

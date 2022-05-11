@@ -5,21 +5,21 @@ interface
 uses
   FireDAC.Comp.Client;
 
+
   type
   IDaoInstruction = interface
     ['{9346DA1C-07D5-4528-AA77-E9B53CA0405D}']
-     procedure InsertItem( Connection : TFDConnection );
-     procedure UpdateItem(MyConnection : TFDConnection);
-     procedure DeleteItem(MyConnection : TFDConnection);
-     procedure  SerchInDatabase(_Value , SB_By : String; Conn :TFDConnection );
-     function PersitentData(MyConnection : TFDConnection) : TFDQuery;
+     procedure InsertItem;
+     procedure UpdateItem;
+     procedure DeleteItem;
+     procedure  SerchInDatabase(_Value , SB_By : String);
+     function PersitentData : TFDQuery;
+     procedure ListAll;
   end;
 
-  iConnection = interface
-    ['{C1AEC28A-C47B-4AF6-B783-D83AA71262D5}']
-    function fdConnection : TFDConnection;
-  end;
 
 implementation
+
+
 
 end.

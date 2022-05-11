@@ -5,7 +5,7 @@ object frmItemStock: TfrmItemStock
   BorderStyle = bsNone
   Caption = 'Item Stock'
   ClientHeight = 611
-  ClientWidth = 1014
+  ClientWidth = 1027
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -20,7 +20,7 @@ object frmItemStock: TfrmItemStock
   object Panel2: TPanel
     Left = 0
     Top = 591
-    Width = 1014
+    Width = 1027
     Height = 20
     Align = alBottom
     BevelOuter = bvNone
@@ -29,14 +29,16 @@ object frmItemStock: TfrmItemStock
     Constraints.MinHeight = 20
     ParentBackground = False
     TabOrder = 2
+    ExplicitWidth = 1014
   end
   object dbData: TDBGrid
     Left = 200
     Top = 31
-    Width = 814
+    Width = 827
     Height = 560
     Align = alClient
     DataSource = DataPersistent
+    Options = [dgTitles, dgRowLines, dgTabs, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
     TabOrder = 0
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
@@ -45,19 +47,6 @@ object frmItemStock: TfrmItemStock
     TitleFont.Style = []
     OnCellClick = dbDataCellClick
     Columns = <
-      item
-        Alignment = taCenter
-        Expanded = False
-        FieldName = 'ID'
-        Title.Alignment = taCenter
-        Title.Caption = 'ID:'
-        Title.Font.Charset = ANSI_CHARSET
-        Title.Font.Color = clWindowText
-        Title.Font.Height = -12
-        Title.Font.Name = '@Malgun Gothic'
-        Title.Font.Style = [fsBold]
-        Visible = True
-      end
       item
         Alignment = taCenter
         Expanded = False
@@ -145,14 +134,12 @@ object frmItemStock: TfrmItemStock
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 1014
+    Width = 1027
     Height = 31
     Align = alTop
     BevelOuter = bvNone
     Caption = 'Inventory'
     Color = 5263440
-    Constraints.MaxHeight = 31
-    Constraints.MinHeight = 14
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
     Font.Height = -12
@@ -162,9 +149,10 @@ object frmItemStock: TfrmItemStock
     ParentFont = False
     TabOrder = 1
     OnMouseDown = Panel1MouseDown
+    ExplicitWidth = 1014
     object imgClose: TImage
       AlignWithMargins = True
-      Left = 987
+      Left = 1000
       Top = 3
       Width = 24
       Height = 25
@@ -187,6 +175,7 @@ object frmItemStock: TfrmItemStock
         6762FBB933F83F59A4EF7F237D00AB394B270DC92E070000000049454E44AE42
         6082}
       OnClick = imgCloseClick
+      ExplicitLeft = 987
     end
     object Image2: TImage
       AlignWithMargins = True
@@ -209,18 +198,17 @@ object frmItemStock: TfrmItemStock
         34B58081D6851D031D8A6B9A573834AF32695BE9D33A15010097634887DD14BD
         AA0000000049454E44AE426082}
       OnClick = Image2Click
-      ExplicitLeft = 11
-      ExplicitTop = 6
+      ExplicitLeft = -2
+      ExplicitTop = 0
     end
     object sbItem: TSearchBox
       Tag = 1
       AlignWithMargins = True
-      Left = 40
+      Left = 35
       Top = 3
-      Width = 146
-      Height = 25
+      Width = 154
+      Height = 22
       Margins.Left = 10
-      Align = alLeft
       BorderStyle = bsNone
       Constraints.MaxHeight = 25
       Font.Charset = DEFAULT_CHARSET
@@ -231,6 +219,7 @@ object frmItemStock: TfrmItemStock
       ParentFont = False
       PopupMenu = menuTypeSearch
       TabOrder = 0
+      OnChange = sbItemChange
       OnKeyDown = sbItemKeyDown
     end
   end
